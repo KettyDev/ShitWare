@@ -35,7 +35,7 @@ local UIGridLayout = Instance.new("UIGridLayout")
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 local mouse = Player:GetMouse()
-local Icons = require(game:GetService("ReplicatedStorage"):WaitForChild("Icons"))
+local Icons = loadstring(game:HttpGet(("https://raw.githubusercontent.com/KettyDev/ShitWare/main/Icons"), true))()
 
 function shitware:New(UILibName)
 	local LoadingUILIB = Instance.new("ScreenGui")
