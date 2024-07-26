@@ -35,7 +35,7 @@ local UIGridLayout = Instance.new("UIGridLayout")
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 local mouse = Player:GetMouse()
-local Icons = loadstring(game:HttpGet(("https://raw.githubusercontent.com/KettyDev/ShitWare/main/Icons"), true))()
+local Icons = require(game.ReplicatedStorage:WaitForChild("Icons"))
 
 function shitware:New(UILibName)
 	local LoadingUILIB = Instance.new("ScreenGui")
@@ -504,7 +504,7 @@ function shitware:New(UILibName)
 	Username.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Username.BorderSizePixel = 0
 	Username.LayoutOrder = 2
-	Username.Position = UDim2.new(0.279999971, 0, 0.303999424, 0)
+	Username.Position = UDim2.new(0.308, 0, 0.26, 0)
 	Username.Size = UDim2.new(0.665405691, 0, 0.396391988, 0)
 	Username.ZIndex = 2
 	Username.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
@@ -533,7 +533,7 @@ function shitware:New(UILibName)
 	Avatar.BackgroundColor3 = Color3.fromRGB(1, 17, 33)
 	Avatar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Avatar.BorderSizePixel = 0
-	Avatar.Position = UDim2.new(0.0170000009, 0, 0.0649999976, 0)
+	Avatar.Position = UDim2.new(0.045, 0, 0.021, 0)
 	Avatar.Size = UDim2.new(0.22322081, 0, 0.858885884, 0)
 	Avatar.Image = Players:GetUserThumbnailAsync(Player.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
 
