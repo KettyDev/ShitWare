@@ -1,0 +1,1046 @@
+local shitware = {}
+
+local runService = game:GetService("RunService")
+local tweenInfo3 = TweenInfo.new(0.15, Enum.EasingStyle.Back, Enum.EasingDirection.In)
+local toggleKey = Enum.KeyCode.RightShift
+local UserInputService = game:GetService("UserInputService")
+local tweenInfo = TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local ScrollingFrametweenInfo = TweenInfo.new(0.1, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+local tweenInfo2 = TweenInfo.new(0.25, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
+local tweenService = game:GetService("TweenService")
+local Toggle = Instance.new("Frame")
+local ToggleName = Instance.new("TextLabel")
+local UIListLayout = Instance.new("UIListLayout")
+local UIPadding_2 = Instance.new("UIPadding")
+local Toggle_2 = Instance.new("Frame")
+local UICorner_5 = Instance.new("UICorner")
+local KNOB = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
+local Toggle_3 = Instance.new("Frame")
+local ToggleName_2 = Instance.new("TextLabel")
+local UIListLayout_2 = Instance.new("UIListLayout")
+local UIPadding_3 = Instance.new("UIPadding")
+local Toggle_4 = Instance.new("Frame")
+local UICorner_7 = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local UIAspectRatioConstraint_7 = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_8 = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_9 = Instance.new("UIAspectRatioConstraint")
+local UIListLayout_3 = Instance.new("UIListLayout")
+local UIGridLayout = Instance.new("UIGridLayout")
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+local mouse = Player:GetMouse()
+local Icons = require(game:GetService("ReplicatedStorage"):WaitForChild("Icons"))
+
+function shitware:New(UILibName)
+	local LoadingUILIB = Instance.new("ScreenGui")
+	local MainFrame = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local LoadingTItle = Instance.new("TextLabel")
+	local Dots = Instance.new("Frame")
+	local _1 = Instance.new("Frame")
+	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local UICorner_2 = Instance.new("UICorner")
+	local _5 = Instance.new("Frame")
+	local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+	local UICorner_3 = Instance.new("UICorner")
+	local _4 = Instance.new("Frame")
+	local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
+	local UICorner_4 = Instance.new("UICorner")
+	local _3 = Instance.new("Frame")
+	local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
+	local UICorner_5 = Instance.new("UICorner")
+	local _2 = Instance.new("Frame")
+	local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
+	local UICorner_6 = Instance.new("UICorner")
+	local UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
+	local UIScale = Instance.new("UIScale")
+	--Properties:
+	LoadingUILIB.Name = "LoadingUILIB"
+	LoadingUILIB.Parent = Player:WaitForChild("PlayerGui")
+	LoadingUILIB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	MainFrame.Name = "MainFrame"
+	MainFrame.Parent = LoadingUILIB
+	MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+	MainFrame.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+	MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MainFrame.BorderSizePixel = 0
+	MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+	MainFrame.Size = UDim2.new(0.303180218, 0, 0.431286544, 0)
+	MainFrame.BackgroundTransparency = 0.3
+	UICorner.CornerRadius = UDim.new(0, 20)
+	UICorner.Parent = MainFrame
+	LoadingTItle.Name = "LoadingTItle"
+	LoadingTItle.Parent = MainFrame
+	LoadingTItle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	LoadingTItle.BackgroundTransparency = 1.000
+	LoadingTItle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	LoadingTItle.BorderSizePixel = 0
+	LoadingTItle.LayoutOrder = 2
+	LoadingTItle.Position = UDim2.new(0.0349652469, 0, 0.26102379, 0)
+	LoadingTItle.Size = UDim2.new(0.927739382, 0, 0.261825413, 0)
+	LoadingTItle.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+	LoadingTItle.Text = "SHITWARE"
+	LoadingTItle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	LoadingTItle.TextScaled = true
+	LoadingTItle.TextSize = 14.000
+	LoadingTItle.TextWrapped = true
+	Dots.Name = "Dots"
+	Dots.Parent = MainFrame
+	Dots.AnchorPoint = Vector2.new(0.5, 1)
+	Dots.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Dots.BackgroundTransparency = 1.000
+	Dots.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Dots.BorderSizePixel = 0
+	Dots.Position = UDim2.new(0.498897105, 0, 0.6915254, 0)
+	Dots.Size = UDim2.new(0.842060387, 0, 0.140423849, 0)
+	_1.Name = "1"
+	_1.Parent = Dots
+	_1.AnchorPoint = Vector2.new(0.5, 0)
+	_1.BackgroundColor3 = Color3.fromRGB(231, 231, 231)
+	_1.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	_1.BorderSizePixel = 0
+	_1.Position = UDim2.new(0.159999996, 0, 0, 0)
+	_1.Size = UDim2.new(1, 0, 1, 0)
+	UIAspectRatioConstraint.Parent = _1
+	UICorner_2.CornerRadius = UDim.new(0.5, 0)
+	UICorner_2.Parent = _1
+	_5.Name = "5"
+	_5.Parent = Dots
+	_5.AnchorPoint = Vector2.new(0.5, 0)
+	_5.BackgroundColor3 = Color3.fromRGB(231, 231, 231)
+	_5.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	_5.BorderSizePixel = 0
+	_5.Position = UDim2.new(0.829999983, 0, 0, 0)
+	_5.Size = UDim2.new(1, 0, 1, 0)
+	UIAspectRatioConstraint_2.Parent = _5
+	UICorner_3.CornerRadius = UDim.new(0.5, 0)
+	UICorner_3.Parent = _5
+	_4.Name = "4"
+	_4.Parent = Dots
+	_4.AnchorPoint = Vector2.new(0.5, 0)
+	_4.BackgroundColor3 = Color3.fromRGB(231, 231, 231)
+	_4.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	_4.BorderSizePixel = 0
+	_4.Position = UDim2.new(0.660000026, 0, 0, 0)
+	_4.Size = UDim2.new(1, 0, 1, 0)
+	UIAspectRatioConstraint_3.Parent = _4
+	UICorner_4.CornerRadius = UDim.new(0.5, 0)
+	UICorner_4.Parent = _4
+	_3.Name = "3"
+	_3.Parent = Dots
+	_3.AnchorPoint = Vector2.new(0.5, 0)
+	_3.BackgroundColor3 = Color3.fromRGB(231, 231, 231)
+	_3.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	_3.BorderSizePixel = 0
+	_3.Position = UDim2.new(0.5, 0, 0, 0)
+	_3.Size = UDim2.new(1, 0, 1, 0)
+	UIAspectRatioConstraint_4.Parent = _3
+	UICorner_5.CornerRadius = UDim.new(0.5, 0)
+	UICorner_5.Parent = _3
+	_2.Name = "2"
+	_2.Parent = Dots
+	_2.AnchorPoint = Vector2.new(0.5, 0)
+	_2.BackgroundColor3 = Color3.fromRGB(231, 231, 231)
+	_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	_2.BorderSizePixel = 0
+	_2.Position = UDim2.new(0.330000013, 0, 0, 0)
+	_2.Size = UDim2.new(1, 0, 1, 0)
+	UIAspectRatioConstraint_5.Parent = _2
+	UICorner_6.CornerRadius = UDim.new(0.5, 0)
+	UICorner_6.Parent = _2
+	UIAspectRatioConstraint_6.Parent = MainFrame
+	UIAspectRatioConstraint_6.AspectRatio = 1.454
+	UIScale.Parent = MainFrame
+	UIScale.Scale = 0.000
+
+	local dots
+	local frame
+	local done = false
+	local blur = game.Lighting:WaitForChild("Blur")
+	frame = Player:WaitForChild("PlayerGui"):WaitForChild("LoadingUILIB"):WaitForChild("MainFrame")
+	dots = frame:WaitForChild("Dots")
+
+	local DragFrame = frame
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(DragFrame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+
+	DragFrame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = DragFrame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+
+	UserInputService.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+
+	tweenService:Create(frame.UIScale, tweenInfo2, {Scale = 1}):Play()
+	tweenService:Create(blur, tweenInfo2, {Size = 24}):Play()
+	task.wait(0.4)
+
+	local function FastTween(_entity, tweenGoals, tweenInfoRaw, delayTime)
+		if type(_entity) ~= "table" then  _entity = {_entity}  end
+
+		local tweens = {}
+
+		for _, entity in ipairs(_entity) do
+			if tweenInfoRaw == nil then
+				tweenInfoRaw = {
+					1,
+					Enum.EasingStyle.Linear,
+					Enum.EasingDirection.Out,
+				}
+			else
+				if tweenInfoRaw[2] == nil then
+					tweenInfoRaw[2] = Enum.EasingStyle.Sine
+
+				elseif type(tweenInfoRaw[2]) == "string" then
+					if string.lower(tweenInfoRaw[2]) == "expo" then
+						tweenInfoRaw[2] = Enum.EasingStyle.Exponential
+					else
+						tweenInfoRaw[2] = Enum.EasingStyle[tweenInfoRaw[2]]
+					end
+				end
+
+				if tweenInfoRaw[3] == nil then
+					tweenInfoRaw[3] = Enum.EasingDirection.InOut
+
+				elseif type(tweenInfoRaw[3]) == "string" then
+					tweenInfoRaw[3] = Enum.EasingDirection[tweenInfoRaw[3]]
+				end
+			end
+
+			local tweenInfo = TweenInfo.new(unpack(tweenInfoRaw))
+			local tweenGoals = tweenGoals
+			local tween = game:GetService("TweenService"):Create(entity, tweenInfo, tweenGoals)
+
+			coroutine.wrap(function()
+				if delayTime then
+					wait(delayTime)
+				end
+
+				tween:Play()
+			end)()
+
+			table.insert(tweens, tween)
+		end
+
+		return unpack(tweens)
+	end
+
+	local function DotsPopIn()
+		local goalPos = dots.Position
+		dots.Position = UDim2.new(goalPos.X.Scale, goalPos.X.Offset, goalPos.Y.Scale + 0.05, goalPos.Y.Offset)
+		dots.Visible = true
+
+		FastTween(dots, {Position = goalPos}, {0.8, "Expo", "Out"})
+	end
+
+	DotsPopIn()
+
+	local stage = 0
+
+	local function DotAnimation()
+		local localStage = stage
+		local dot = dots:FindFirstChild(stage + 1)
+		coroutine.wrap(function()
+			wait()
+			while (stage == localStage and (not done)) do
+				dot.Position = UDim2.new(dot.Position.X.Scale, dot.Position.X.Offset, math.sin(tick()*15)*0.1, 0)
+				runService.RenderStepped:Wait()
+			end
+			FastTween(dot, {Position = UDim2.new(dot.Position.X.Scale, dot.Position.X.Offset, 0, 0)}, {0.2, "Sine", "Out"})
+		end)()
+	end
+
+	local function AddDot()
+		stage += 1
+
+		local dot = dots:FindFirstChild(stage)
+		FastTween(dot, {BackgroundColor3 = Color3.fromRGB(11, 140, 195)}, {0.3, "Expo", "Out"})
+
+		if stage <= 4 then
+			DotAnimation()
+		end
+	end
+
+	DotAnimation()
+
+	----------------------------------------------------------------
+	local function Stage1()
+		task.wait(0.8)
+	end
+
+	local function Stage2()
+		task.wait(0.65)
+	end
+
+	local function Stage3()
+		task.wait(0.45)
+	end
+
+	local function Stage4()
+		task.wait(0.35)
+	end
+
+	local function Stage5()
+		task.wait(0.25)
+	end
+
+	Stage1()  if done then return end  AddDot()
+	Stage2()  if done then return end  AddDot()
+	Stage3()  if done then return end  AddDot()
+	Stage4()  if done then return end  AddDot()
+	Stage5()  if done then return end  AddDot()
+
+	frame.LoadingTItle.Text = "LOADED"
+	frame.LoadingTItle.TextColor3 = Color3.fromRGB(11, 140, 195)
+	task.wait(1.5)
+
+	local hide = tweenService:Create(frame.UIScale, tweenInfo3, {Scale = 0})
+	tweenService:Create(blur, tweenInfo2, {Size = 0}):Play()
+	hide.Completed:Connect(function()
+		task.wait(0.2)
+		frame.Parent:Destroy()
+	end)
+	hide:Play()
+	
+	local UILib = Instance.new("ScreenGui")
+	local Main = Instance.new("Frame")
+	local MainUICorner = Instance.new("UICorner")
+	local TabHolder = Instance.new("Frame")
+	local TabHolderUICorner = Instance.new("UICorner")
+	local BehindTabHolder = Instance.new("Frame")
+	local TopBarStripe = Instance.new("Frame")
+	local TopBar = Instance.new("Frame")
+	local TopBarUICorner = Instance.new("UICorner")
+	local TopBarBehind = Instance.new("Frame")
+	local LogoFrame = Instance.new("Frame")
+	local LogoFrameUIListLayout = Instance.new("UIListLayout")
+	local ShitwareTitle = Instance.new("TextLabel")
+	local Sections = Instance.new("ScrollingFrame")
+	local SectionsUIPadding = Instance.new("UIPadding")
+	local SectionsUIListLayout = Instance.new("UIListLayout")
+	local Info = Instance.new("Frame")
+	local Username = Instance.new("TextLabel")
+	local InfoUICorner = Instance.new("UICorner")
+	local Avatar = Instance.new("ImageLabel")
+	local AvatarUICorner = Instance.new("UICorner")
+	local AvatarUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local BehindInfo = Instance.new("Frame")
+	local BehindInfo1 = Instance.new("Frame")
+	local BehindInfo2 = Instance.new("Frame")
+	local MainUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+
+	UILib.Enabled = false
+	UILib.Name = "UILib"
+	UILib.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	UILib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	UILib.IgnoreGuiInset = true
+
+	Main.Name = "Main"
+	Main.Parent = UILib
+	Main.AnchorPoint = Vector2.new(0.5, 0.5)
+	Main.BackgroundColor3 = Color3.fromRGB(1, 17, 33)
+	Main.BackgroundTransparency = 0.2
+	Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Main.BorderSizePixel = 0
+	Main.ClipsDescendants = true
+	Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+	Main.Size = UDim2.new(0.469, 0, 0.644, 0)
+	local UIScale = Instance.new("UIScale")
+	UIScale.Parent = Main
+	UIScale.Scale = 0
+	UILib.Enabled = true
+
+	MainUICorner.CornerRadius = UDim.new(0, 10)
+	MainUICorner.Parent = Main
+
+	TabHolder.Name = "TabHolder"
+	TabHolder.Parent = Main
+	TabHolder.BackgroundColor3 = Color3.fromRGB(9, 9, 19)
+	TabHolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TabHolder.BorderSizePixel = 0
+	TabHolder.Position = UDim2.new(0.264753461, 0, 0, 0)
+	TabHolder.Size = UDim2.new(0.735246599, 0, 1, 0)
+
+	TabHolderUICorner.CornerRadius = UDim.new(0, 10)
+	TabHolderUICorner.Parent = TabHolder
+
+	BehindTabHolder.Name = "BehindTabHolder"
+	BehindTabHolder.Parent = TabHolder
+	BehindTabHolder.AnchorPoint = Vector2.new(0.5, 0.5)
+	BehindTabHolder.BackgroundColor3 = Color3.fromRGB(9, 9, 19)
+	BehindTabHolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	BehindTabHolder.BorderSizePixel = 0
+	BehindTabHolder.Position = UDim2.new(0.482457608, 0, 0.5, 0)
+	BehindTabHolder.Size = UDim2.new(0.964915216, 0, 1, 0)
+
+	TopBarStripe.Name = "TopBarStripe"
+	TopBarStripe.Parent = TabHolder
+	TopBarStripe.AnchorPoint = Vector2.new(0.5, 0.5)
+	TopBarStripe.BackgroundColor3 = Color3.fromRGB(2, 29, 57)
+	TopBarStripe.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TopBarStripe.BorderSizePixel = 0
+	TopBarStripe.Position = UDim2.new(0.499502242, 0, 0.0977560952, 0)
+	TopBarStripe.Size = UDim2.new(0.999000013, 0, 0.0170000009, 0)
+
+	TopBar.Name = "TopBar"
+	TopBar.Parent = TabHolder
+	TopBar.AnchorPoint = Vector2.new(0.5, 0.5)
+	TopBar.BackgroundColor3 = Color3.fromRGB(9, 9, 19)
+	TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TopBar.BorderSizePixel = 0
+	TopBar.Position = UDim2.new(0.499004424, 0, 0.0522497855, 0)
+	TopBar.Size = UDim2.new(0.998008847, 0, 0.104499571, 0)
+	TopBar.ZIndex = 2
+
+	TopBarUICorner.CornerRadius = UDim.new(0, 10)
+	TopBarUICorner.Parent = TopBar
+
+	TopBarBehind.Name = "TopBarBehind"
+	TopBarBehind.Parent = TopBar
+	TopBarBehind.AnchorPoint = Vector2.new(0.5, 0.5)
+	TopBarBehind.BackgroundColor3 = Color3.fromRGB(9, 9, 19)
+	TopBarBehind.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TopBarBehind.BorderSizePixel = 0
+	TopBarBehind.Position = UDim2.new(0.500997424, 0, 0.748112321, 0)
+	TopBarBehind.Size = UDim2.new(1.00199485, 0, 0.503775418, 0)
+	TopBarBehind.ZIndex = 2
+
+	LogoFrame.Name = "Logo"
+	LogoFrame.Parent = Main
+	LogoFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	LogoFrame.BackgroundTransparency = 1.000
+	LogoFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	LogoFrame.BorderSizePixel = 0
+	LogoFrame.Position = UDim2.new(0, 0, 0.0157714281, 0)
+	LogoFrame.Size = UDim2.new(0.26475361, 0, 0.0868537351, 0)
+
+	LogoFrameUIListLayout.Parent = LogoFrame
+	LogoFrameUIListLayout.FillDirection = Enum.FillDirection.Horizontal
+	LogoFrameUIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	LogoFrameUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	LogoFrameUIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+	LogoFrameUIListLayout.Padding = UDim.new(0, 3)
+
+	ShitwareTitle.Name = "Title"
+	ShitwareTitle.Parent = LogoFrame
+	ShitwareTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ShitwareTitle.BackgroundTransparency = 1.000
+	ShitwareTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ShitwareTitle.BorderSizePixel = 0
+	ShitwareTitle.LayoutOrder = 2
+	ShitwareTitle.Position = UDim2.new(0.119688004, 0, 0.132210106, 0)
+	ShitwareTitle.Size = UDim2.new(0.760624111, 0, 0.773689866, 0)
+	ShitwareTitle.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+	ShitwareTitle.Text = UILibName
+	ShitwareTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	ShitwareTitle.TextScaled = true
+	ShitwareTitle.TextSize = 14.000
+	ShitwareTitle.TextWrapped = true
+
+	Sections.Name = "Sections"
+	Sections.Parent = Main
+	Sections.Active = true
+	Sections.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Sections.BackgroundTransparency = 1.000
+	Sections.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Sections.BorderSizePixel = 0
+	Sections.Position = UDim2.new(-3.96571771e-08, 0, 0.110673271, 0)
+	Sections.Size = UDim2.new(0.26475361, 0, 0.782984674, 0)
+	Sections.ScrollBarThickness = 0
+
+	SectionsUIPadding.Parent = Sections
+	SectionsUIPadding.PaddingBottom = UDim.new(0, 5)
+	SectionsUIPadding.PaddingLeft = UDim.new(0, 5)
+	SectionsUIPadding.PaddingTop = UDim.new(0, 5)
+
+	SectionsUIListLayout.Parent = Sections
+	SectionsUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	SectionsUIListLayout.Padding = UDim.new(0.00999999978, 0)
+
+	Info.Name = "Info"
+	Info.Parent = Main
+	Info.BackgroundColor3 = Color3.fromRGB(1, 17, 33)
+	Info.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Info.BorderSizePixel = 0
+	Info.Position = UDim2.new(-7.93143542e-08, 0, 0.895305157, 0)
+	Info.Size = UDim2.new(0.264753401, 0, 0.102952726, 0)
+	Info.ZIndex = 2
+	Info.BackgroundTransparency = 1
+
+	Username.Name = "Username"
+	Username.Parent = Info
+	Username.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Username.BackgroundTransparency = 1.000
+	Username.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Username.BorderSizePixel = 0
+	Username.LayoutOrder = 2
+	Username.Position = UDim2.new(0.279999971, 0, 0.303999424, 0)
+	Username.Size = UDim2.new(0.665405691, 0, 0.396391988, 0)
+	Username.ZIndex = 2
+	Username.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+	Username.Text = Player.DisplayName
+	Username.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Username.TextScaled = true
+	Username.TextSize = 14.000
+	Username.TextWrapped = true
+	Username.TextXAlignment = Enum.TextXAlignment.Left
+
+	InfoUICorner.CornerRadius = UDim.new(0, 10)
+	InfoUICorner.Parent = Info
+
+	BehindInfo.Name = "BehindInfo"
+	BehindInfo.Parent = Info
+	BehindInfo.AnchorPoint = Vector2.new(0.5, 0.5)
+	BehindInfo.BackgroundColor3 = Color3.fromRGB(1, 17, 33)
+	BehindInfo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	BehindInfo.BorderSizePixel = 0
+	BehindInfo.Position = UDim2.new(0.49999997, 0, 0.295464903, 0)
+	BehindInfo.Size = UDim2.new(0.99999994, 0, 0.554875731, 0)
+	BehindInfo.BackgroundTransparency = 1
+
+	Avatar.Name = "Avatar"
+	Avatar.Parent = Info
+	Avatar.BackgroundColor3 = Color3.fromRGB(1, 17, 33)
+	Avatar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Avatar.BorderSizePixel = 0
+	Avatar.Position = UDim2.new(0.0170000009, 0, 0.0649999976, 0)
+	Avatar.Size = UDim2.new(0.22322081, 0, 0.858885884, 0)
+	Avatar.Image = Players:GetUserThumbnailAsync(Player.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+
+	AvatarUICorner.CornerRadius = UDim.new(1, 0)
+	AvatarUICorner.Parent = Avatar
+
+	AvatarUIAspectRatioConstraint.Parent = Avatar
+
+	BehindInfo2.Name = "BehindInfo2"
+	BehindInfo2.Parent = Info
+	BehindInfo2.AnchorPoint = Vector2.new(0.5, 0.5)
+	BehindInfo2.BackgroundColor3 = Color3.fromRGB(2, 29, 57)
+	BehindInfo2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	BehindInfo2.BorderSizePixel = 0
+	BehindInfo2.Position = UDim2.new(0.499999702, 0, 0.0625571609, 0)
+	BehindInfo2.Size = UDim2.new(1, 0, 0.157115579, 0)
+	BehindInfo2.ZIndex = 0
+	BehindInfo2.BackgroundTransparency = 1
+
+	BehindInfo1.Name = "Behind1"
+	BehindInfo1.Parent = Info
+	BehindInfo1.AnchorPoint = Vector2.new(0.5, 0.5)
+	BehindInfo1.BackgroundColor3 = Color3.fromRGB(1, 17, 33)
+	BehindInfo1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	BehindInfo1.BorderSizePixel = 0
+	BehindInfo1.Position = UDim2.new(0.599478126, 0, 0.509012222, 0)
+	BehindInfo1.Size = UDim2.new(0.801043689, 0, 0.981972694, 0)
+	BehindInfo1.ZIndex = 0
+	BehindInfo1.BackgroundTransparency = 1
+
+	MainUIAspectRatioConstraint.Parent = Main
+	MainUIAspectRatioConstraint.AspectRatio = 1.505
+	
+	UserInputService.InputBegan:Connect(function(input)
+		if input.KeyCode == toggleKey then
+			local FrameToScale = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main")
+			local showMenu = tweenService:Create(FrameToScale.UIScale, tweenInfo2, { Scale = 1 })
+			showMenu:Play()
+			tweenService:Create(blur, tweenInfo2, {Size = 24}):Play()
+
+			if FrameToScale.UIScale.Scale == 1 then
+				local hideMenu = tweenService:Create(FrameToScale.UIScale, tweenInfo3, { Scale = 0 })
+				tweenService:Create(blur, tweenInfo2, {Size = 0}):Play()
+				hideMenu:Play()
+			end
+		end
+	end)
+
+	local frame = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main")
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+
+	local function updateInput2(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+
+	UserInputService.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput2(input)
+			end
+		end
+	end)
+
+	task.wait(0.4)
+	tweenService:Create(Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main"):WaitForChild("UIScale"), tweenInfo2, {Scale = 1}):Play()
+	tweenService:Create(blur, tweenInfo2, {Size = 24}):Play()
+end
+
+function shitware:AddSection(SectionName)
+	local NewSection = Instance.new("Frame")
+	local NewSectionUIListLayout = Instance.new("UIListLayout")
+	local SectionTitle = Instance.new("TextLabel")
+	local NewSectionUIPadding = Instance.new("UIPadding")
+	local NewSectionUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local CurrentSections = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main"):WaitForChild("Sections")
+
+	NewSection.Name = SectionName
+	NewSection.Parent = CurrentSections
+	NewSection.AutomaticSize = 2
+	NewSection.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	NewSection.BackgroundTransparency = 1.000
+	NewSection.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	NewSection.BorderSizePixel = 0
+	NewSection.Position = UDim2.new(-1.49789003e-07, 0, 0, 0)
+	NewSection.Size = UDim2.new(0.998094916, 0, 0.0547085591, 0)
+
+	NewSectionUIListLayout.Parent = NewSection
+	NewSectionUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	NewSectionUIListLayout.Padding = UDim.new(0, 3)
+
+	SectionTitle.Name = "SectionTitle"
+	SectionTitle.Parent = NewSection
+	SectionTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	SectionTitle.BackgroundTransparency = 1.000
+	SectionTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SectionTitle.BorderSizePixel = 0
+	SectionTitle.LayoutOrder = 1
+	SectionTitle.Position = UDim2.new(0, 0, -3.9593732e-07, 0)
+	SectionTitle.Size = UDim2.new(1.00190759, 0, 0.604787946, 0)
+	SectionTitle.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+	SectionTitle.Text = SectionName
+	SectionTitle.TextColor3 = Color3.fromRGB(157, 157, 157)
+	SectionTitle.TextScaled = true
+	SectionTitle.TextSize = 14.000
+	SectionTitle.TextWrapped = true
+	SectionTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	NewSectionUIPadding.Parent = SectionTitle
+	NewSectionUIPadding.PaddingLeft = UDim.new(0, 15)
+
+	NewSectionUIAspectRatioConstraint.Parent = SectionTitle
+	NewSectionUIAspectRatioConstraint.AspectRatio = 11.881
+end
+
+function shitware:AddTab(SectionName, ButtonText, ImageName, Call)
+	local Section = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main"):WaitForChild("Sections"):FindFirstChild(SectionName)
+
+	if Section then
+		local NewSectionButton = Instance.new("TextButton")
+		local NewSectionButtonUIListLayout = Instance.new("UIListLayout")
+		local NewSectionButtonUICorner = Instance.new("UICorner")
+		local NewSectionButtonImageLabel = Instance.new("ImageLabel")
+		local NewSectionButtonImageLabelUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+		local NewSectionButtonUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+		local ButtonNameText = Instance.new("TextLabel")
+		local UIScale = Instance.new("UIScale")
+		local NewTab = Instance.new("ScrollingFrame")
+		local NewTabUIPadding = Instance.new("UIPadding")
+		local NewTabUIGridLayout = Instance.new("UIGridLayout")
+		local ShowingFrame = Instance.new("Frame")
+		local ShowingFrameUICorner = Instance.new("UICorner")
+		local ShowingFrameUIScale = Instance.new("UIScale")
+		local ShowingFrameUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+
+		NewTab.Name = ButtonText
+		NewTab.Parent = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main"):WaitForChild("TabHolder")
+		NewTab.Active = true
+		NewTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		NewTab.ScrollBarImageColor3 = Color3.fromRGB(63, 136, 252)
+		NewTab.BackgroundTransparency = 1.000
+		NewTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		NewTab.BorderSizePixel = 0
+		NewTab.Position = UDim2.new(0.0130000003, 0, 0.119999997, 0)
+		NewTab.Size = UDim2.new(0.97299999, 0, 0.870000005, 0)
+		NewTab.ScrollBarThickness = 8
+		NewTab.Visible = false
+		NewTab.ZIndex = 200
+		NewTab:SetAttribute("Visible", false)
+
+		NewTabUIPadding.Parent = NewTab
+		NewTabUIPadding.PaddingBottom = UDim.new(0, 5)
+		NewTabUIPadding.PaddingLeft = UDim.new(0, 5)
+		NewTabUIPadding.PaddingRight = UDim.new(0, 5)
+		NewTabUIPadding.PaddingTop = UDim.new(0, 10)
+
+		NewTabUIGridLayout.Parent = NewTab
+		NewTabUIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		NewTabUIGridLayout.CellPadding = UDim2.new(0.0399999991, 0, 0.0399999991, 0)
+		NewTabUIGridLayout.CellSize = UDim2.new(0.479999989, 0, 0.25, 0)
+
+		NewSectionButton.Name = "NewSectionButton"
+		NewSectionButton.Parent = Section
+		NewSectionButton.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+		NewSectionButton.BackgroundTransparency = 1.000
+		NewSectionButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		NewSectionButton.BorderSizePixel = 0
+		NewSectionButton.LayoutOrder = 2
+		NewSectionButton.Position = UDim2.new(1.55051694e-07, 0, 0.223096818, 0)
+		NewSectionButton.Size = UDim2.new(1.00972903, 0, 0.630487919, 0)
+		NewSectionButton.Font = Enum.Font.SourceSans
+		NewSectionButton.Text = ""
+		NewSectionButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+		NewSectionButton.TextScaled = true
+		NewSectionButton.TextSize = 14.000
+		NewSectionButton.TextWrapped = true
+		UIScale.Parent = NewSectionButton
+
+		ShowingFrame.Name = "ShowingFrame"
+		ShowingFrame.Parent = NewSectionButton
+		ShowingFrame.BackgroundColor3 = Color3.fromRGB(17, 141, 203)
+		ShowingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		ShowingFrame.BorderSizePixel = 0
+		ShowingFrame.LayoutOrder = 1
+		ShowingFrame.Position = UDim2.new(0.027301779, 0, 0.0890263766, 0)
+		ShowingFrame.Size = UDim2.new(0.026, 0, 0.652, 0)
+		ShowingFrame.Visible = true
+
+		ShowingFrameUICorner.CornerRadius = UDim.new(0, 20)
+		ShowingFrameUICorner.Parent = ShowingFrame
+
+		ShowingFrameUIScale.Scale = 0
+		ShowingFrameUIScale.Parent = ShowingFrame
+
+		ShowingFrameUIAspectRatioConstraint.Parent = ShowingFrame
+		ShowingFrameUIAspectRatioConstraint.AspectRatio = 0.237
+
+		NewSectionButtonUIListLayout.Parent = NewSectionButton
+		NewSectionButtonUIListLayout.FillDirection = Enum.FillDirection.Horizontal
+		NewSectionButtonUIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+		NewSectionButtonUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		NewSectionButtonUIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+		NewSectionButtonUIListLayout.Padding = UDim.new(0, 7)
+
+		ButtonNameText.Name = "ButtonNameText"
+		ButtonNameText.Parent = NewSectionButton
+		ButtonNameText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ButtonNameText.BackgroundTransparency = 1.000
+		ButtonNameText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		ButtonNameText.BorderSizePixel = 0
+		ButtonNameText.LayoutOrder = 3
+		ButtonNameText.Position = UDim2.new(0.375488073, 0, 0.234592378, 0)
+		ButtonNameText.Size = UDim2.new(0.694048345, 0, 0.530814826, 0)
+		ButtonNameText.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
+		ButtonNameText.Text = ButtonText
+		ButtonNameText.TextColor3 = Color3.fromRGB(157, 157, 157)
+		ButtonNameText.TextScaled = true
+		ButtonNameText.TextSize = 14.000
+		ButtonNameText.TextWrapped = true
+		ButtonNameText.TextXAlignment = Enum.TextXAlignment.Left
+
+		NewSectionButtonUICorner.CornerRadius = UDim.new(0, 10)
+		NewSectionButtonUICorner.Parent = NewSectionButton
+
+		NewSectionButtonImageLabel.Parent = NewSectionButton
+		NewSectionButtonImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		NewSectionButtonImageLabel.BackgroundTransparency = 1.000
+		NewSectionButtonImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		NewSectionButtonImageLabel.BorderSizePixel = 0
+		NewSectionButtonImageLabel.Position = UDim2.new(0.0504929796, 0, 0.12427076, 0)
+		NewSectionButtonImageLabel.Size = UDim2.new(0.167615026, 0, 0.732507408, 0)
+		NewSectionButtonImageLabel.Image = Icons[ImageName] or Icons["home"]
+		NewSectionButtonImageLabel.ImageColor3 = Color3.fromRGB(9, 152, 227)
+		NewSectionButtonImageLabel.LayoutOrder = 2
+
+		NewSectionButtonImageLabelUIAspectRatioConstraint.Parent = NewSectionButtonImageLabel
+		NewSectionButtonImageLabelUIAspectRatioConstraint.AspectRatio = 1.013
+
+		NewSectionButtonUIAspectRatioConstraint.Parent = NewSectionButton
+		NewSectionButtonUIAspectRatioConstraint.AspectRatio = 5.938
+
+		NewSectionButton.MouseButton1Click:Connect(function()
+			local TabHolder = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main"):WaitForChild("TabHolder")
+			for _, ScrollingFrame in TabHolder:GetChildren() do
+				if ScrollingFrame:IsA("ScrollingFrame") then
+					if ScrollingFrame.Name == ButtonText then
+						--NOTHING
+					else
+						print("Hiding")
+						tweenService:Create(ScrollingFrame, ScrollingFrametweenInfo, {Position = UDim2.new(0.0130000003, 0, 1.119999997, 0)}):Play()
+						ScrollingFrame.Position = UDim2.new(0.0130000003, 0, 0.119999997, 0)
+						ScrollingFrame.Visible = false
+						ScrollingFrame:SetAttribute("Visible", false)
+					end
+				end
+			end
+
+			TabHolder:FindFirstChild(ButtonText):SetAttribute("Visible", not TabHolder:FindFirstChild(ButtonText):GetAttribute("Visible"))
+
+			if TabHolder:FindFirstChild(ButtonText):GetAttribute("Visible") == true then
+				TabHolder:FindFirstChild(ButtonText).Position = UDim2.new(0.0130000003, 0, 1.119999997, 0)
+				TabHolder:FindFirstChild(ButtonText).Visible = true
+				tweenService:Create(TabHolder:FindFirstChild(ButtonText), ScrollingFrametweenInfo, {Position = UDim2.new(0.0130000003, 0, 0.119999997, 0)}):Play()
+			else
+				local Hide = tweenService:Create(TabHolder:FindFirstChild(ButtonText), ScrollingFrametweenInfo, {Position = UDim2.new(0.0130000003, 0, 1.119999997, 0)})
+				Hide.Completed:Connect(function()
+					TabHolder:FindFirstChild(ButtonText).Visible = false
+				end)
+				Hide:Play()
+				TabHolder:FindFirstChild(ButtonText).Position = UDim2.new(0.0130000003, 0, 0.119999997, 0)
+			end
+
+		end)
+
+		task.spawn(function()
+			while wait() do
+				local TabHolder = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main"):WaitForChild("TabHolder")
+
+				if TabHolder:FindFirstChild(ButtonText):GetAttribute("Visible") == true then
+					tweenService:Create(NewSectionButton.ShowingFrame.UIScale, tweenInfo, {Scale = 1}):Play()
+					local UiScale = NewSectionButton.UIScale
+					local scale = 1.1
+					tweenService:Create(ButtonNameText, tweenInfo, {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+					tweenService:Create(UiScale, tweenInfo, {Scale = scale}):Play()
+				elseif TabHolder:FindFirstChild(ButtonText):GetAttribute("Visible") == false then
+					tweenService:Create(NewSectionButton.ShowingFrame.UIScale, tweenInfo, {Scale = 0}):Play()
+					local UiScale = NewSectionButton.UIScale
+					local scale = 1
+					tweenService:Create(ButtonNameText, tweenInfo, {TextColor3 = Color3.fromRGB(157, 157, 157)}):Play()
+					tweenService:Create(UiScale, tweenInfo, {Scale = scale}):Play()
+				end
+			end
+		end)
+	end
+end
+
+function shitware:AddTabBox(TabName, TabBoxName)
+	local Tab = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main"):WaitForChild("TabHolder"):FindFirstChild(TabName)
+
+	if Tab then
+		local TabBox = Instance.new("Frame")
+		local TabBoxUICorner = Instance.new("UICorner")
+		local TabBoxTopBar = Instance.new("Frame")
+		local TabNameTextUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+		local TabBoxTopBarTopBarStripe = Instance.new("Frame")
+		local TabBoxTopBarTopBarStripeUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+		local TabBoxTopBarUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+		local TabBoxFunctions = Instance.new("ScrollingFrame")
+		local TabBoxFunctionsUIListLayout = Instance.new("UIListLayout")
+		local TabNameText = Instance.new("TextLabel")
+
+		TabBox.Name = TabName
+		TabBox.Parent = Tab
+		TabBox.AnchorPoint = Vector2.new(0.5, 0.5)
+		TabBox.BackgroundColor3 = Color3.fromRGB(1, 17, 33)
+		TabBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabBox.BorderSizePixel = 0
+		TabBox.Position = UDim2.new(0.5, 0, 0.5, 0)
+		TabBox.Size = UDim2.new(1, 0, 1, 0)
+
+		TabBoxUICorner.CornerRadius = UDim.new(0, 9)
+		TabBoxUICorner.Parent = TabBox
+
+		TabBoxTopBar.Name = "TopBar"
+		TabBoxTopBar.Parent = TabBox
+		TabBoxTopBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TabBoxTopBar.BackgroundTransparency = 1.000
+		TabBoxTopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabBoxTopBar.BorderSizePixel = 0
+		TabBoxTopBar.Size = UDim2.new(0.999999881, 0, 0.186187789, 0)
+
+		TabNameText.Name = "TabName"
+		TabNameText.Parent = TabBoxTopBar
+		TabNameText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TabNameText.BackgroundTransparency = 1.000
+		TabNameText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabNameText.BorderSizePixel = 0
+		TabNameText.LayoutOrder = 2
+		TabNameText.Position = UDim2.new(0.0358752608, 0, 0.247052282, 0)
+		TabNameText.Size = UDim2.new(0.93900001, 0, 0.38499999, 0)
+		TabNameText.ZIndex = 5
+		TabNameText.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+		TabNameText.Text = TabBoxName
+		TabNameText.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TabNameText.TextScaled = true
+		TabNameText.TextSize = 14.000
+		TabNameText.TextWrapped = true
+		TabNameText.TextXAlignment = Enum.TextXAlignment.Left
+
+		TabNameTextUIAspectRatioConstraint.Parent = TabNameText
+		TabNameTextUIAspectRatioConstraint.AspectRatio = 13.490
+
+		TabBoxTopBarTopBarStripe.Name = "TopBarStripe"
+		TabBoxTopBarTopBarStripe.Parent = TabBoxTopBar
+		TabBoxTopBarTopBarStripe.AnchorPoint = Vector2.new(0.5, 0.5)
+		TabBoxTopBarTopBarStripe.BackgroundColor3 = Color3.fromRGB(2, 29, 57)
+		TabBoxTopBarTopBarStripe.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabBoxTopBarTopBarStripe.BorderSizePixel = 0
+		TabBoxTopBarTopBarStripe.Position = UDim2.new(0.503792405, 0, 0.797499895, 0)
+		TabBoxTopBarTopBarStripe.Size = UDim2.new(0.949999988, 0, 0.0240000021, 0)
+
+		TabBoxTopBarTopBarStripeUIAspectRatioConstraint.Parent = TabBoxTopBarTopBarStripe
+		TabBoxTopBarTopBarStripeUIAspectRatioConstraint.AspectRatio = 218.941
+
+		TabBoxTopBarUIAspectRatioConstraint.Parent = TabBoxTopBar
+		TabBoxTopBarUIAspectRatioConstraint.AspectRatio = 5.531
+
+		TabBoxFunctions.Name = "Functions"
+		TabBoxFunctions.Parent = TabBox
+		TabBoxFunctions.Active = true
+		TabBoxFunctions.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TabBoxFunctions.BackgroundTransparency = 1.000
+		TabBoxFunctions.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabBoxFunctions.BorderSizePixel = 0
+		TabBoxFunctions.Position = UDim2.new(0.0269998871, 0, 0.182000056, 0)
+		TabBoxFunctions.Size = UDim2.new(0.944000006, 0, 0.778016746, 0)
+		TabBoxFunctions.BottomImage = ""
+		TabBoxFunctions.ScrollBarThickness = 0
+
+		TabBoxFunctionsUIListLayout.Parent = TabBoxFunctions
+		TabBoxFunctionsUIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+		TabBoxFunctionsUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		TabBoxFunctionsUIListLayout.Padding = UDim.new(0, 5)
+	end
+end
+
+function shitware:AddToggle(TabName, ToggleText, callback)
+	local Tab = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main"):WaitForChild("TabHolder"):FindFirstChild(TabName):FindFirstChild(TabName)
+
+	if Tab then
+		local NewToggle = Instance.new("Frame")
+		local NewToggleName = Instance.new("TextLabel")
+		local NewToggleUIListLayout = Instance.new("UIListLayout")
+		local NewToggleUIPadding = Instance.new("UIPadding")
+		local NewToggleBG = Instance.new("Frame")
+		local NewToggleUICorner = Instance.new("UICorner")
+		local KNOB = Instance.new("TextButton")
+		local KnobUICorner = Instance.new("UICorner")
+		local KNOBUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+		local NewToggleBGUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+		local NewToggleUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+
+		NewToggle.Name = "Toggle"
+		NewToggle.Parent = Tab.Functions
+		NewToggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		NewToggle.BackgroundTransparency = 1.000
+		NewToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		NewToggle.BorderSizePixel = 0
+		NewToggle.Position = UDim2.new(0, 0, 0, 0)
+		NewToggle.Size = UDim2.new(1, 0, 0.205, 0)
+		NewToggle:SetAttribute("Toggle", false)
+
+		NewToggleName.Name = TabName
+		NewToggleName.Parent = NewToggle
+		NewToggleName.BackgroundColor3 = Color3.fromRGB(157, 157, 157)
+		NewToggleName.BackgroundTransparency = 1.000
+		NewToggleName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		NewToggleName.BorderSizePixel = 0
+		NewToggleName.LayoutOrder = 1
+		NewToggleName.Position = UDim2.new(0, 0, 0.23570247, 0)
+		NewToggleName.Size = UDim2.new(0.803, 0, 0.529, 0)
+		NewToggleName.ZIndex = 5
+		NewToggleName.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
+		NewToggleName.Text = ToggleText
+		NewToggleName.TextColor3 = Color3.fromRGB(255, 255, 255)
+		NewToggleName.TextScaled = true
+		NewToggleName.TextSize = 14.000
+		NewToggleName.TextWrapped = true
+		NewToggleName.TextXAlignment = Enum.TextXAlignment.Left
+
+		NewToggleUIListLayout.Parent = NewToggle
+		NewToggleUIListLayout.FillDirection = Enum.FillDirection.Horizontal
+		NewToggleUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		NewToggleUIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+
+		NewToggleUIPadding.Parent = NewToggle
+		NewToggleUIPadding.PaddingLeft = UDim.new(0, 10)
+
+		NewToggleBG.Name = "ToggleBG"
+		NewToggleBG.Parent = NewToggle
+		NewToggleBG.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+		NewToggleBG.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		NewToggleBG.BorderSizePixel = 0
+		NewToggleBG.LayoutOrder = 2
+		NewToggleBG.Position = UDim2.new(0.692625642, 0, 0.169966787, 0)
+		NewToggleBG.Size = UDim2.new(0.163265303, 0, 0.660066009, 0)
+
+		NewToggleUICorner.CornerRadius = UDim.new(1, 0)
+		NewToggleUICorner.Parent = NewToggleBG
+
+		KNOB.Name = "KNOB"
+		KNOB.Parent = NewToggleBG
+		KNOB.AnchorPoint = Vector2.new(0.5, 0.5)
+		KNOB.BackgroundColor3 = Color3.fromRGB(0, 169, 247)
+		KNOB.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		KNOB.BorderSizePixel = 0
+		KNOB.Position = UDim2.new(0.200000003, 0, 0.5, 0)
+		KNOB.Size = UDim2.new(0.469362944, 0, 1.30041063, 0)
+		KNOB.Font = Enum.Font.SourceSans
+		KNOB.Text = ""
+		KNOB.TextColor3 = Color3.fromRGB(0, 0, 0)
+		KNOB.TextSize = 14.000
+
+		KnobUICorner.CornerRadius = UDim.new(1, 0)
+		KnobUICorner.Parent = KNOB
+
+		KNOBUIAspectRatioConstraint.Parent = KNOB
+
+		NewToggleBGUIAspectRatioConstraint.Parent = NewToggleBG
+		NewToggleBGUIAspectRatioConstraint.AspectRatio = 1.918
+
+		NewToggleUIAspectRatioConstraint.Parent = NewToggle
+		NewToggleUIAspectRatioConstraint.AspectRatio = 8.086
+
+		KNOB.MouseButton1Click:Connect(function()
+			KNOB:SetAttribute("Toggle", not KNOB:GetAttribute("Toggle"))
+
+			if KNOB:GetAttribute("Toggle") == true then
+				tweenService:Create(KNOB, tweenInfo, {Position = UDim2.new(0.8, 0, 0.5, 0)}):Play()
+				tweenService:Create(KNOB.Parent, tweenInfo, {BackgroundColor3 = Color3.fromRGB(0, 22, 42)}):Play()
+			else
+				tweenService:Create(KNOB, tweenInfo, {Position = UDim2.new(0.2, 0, 0.5, 0)}):Play()
+				tweenService:Create(KNOB.Parent, tweenInfo, {BackgroundColor3 = Color3.fromRGB(47, 47, 47)}):Play()
+			end
+
+			if callback then
+				callback(KNOB:GetAttribute("Toggle"))
+			end
+		end)
+	end
+end
+
+return shitware
