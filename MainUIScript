@@ -162,7 +162,8 @@ function shitware:New(UILibName)
 	local dots
 	local frame
 	local done = false
-	local blur = game.Lighting:WaitForChild("Blur")
+	local blur = Instance.new("Blur")
+	blur.parent = game.Lighting
 	frame = Player:WaitForChild("PlayerGui"):WaitForChild("LoadingUILIB"):WaitForChild("MainFrame")
 	dots = frame:WaitForChild("Dots")
 
