@@ -331,7 +331,7 @@ function shitware:New(UILibName)
 		frame.Parent:Destroy()
 	end)
 	hide:Play()
-	
+
 	local UILib = Instance.new("ScreenGui")
 	local Main = Instance.new("Frame")
 	local MainUICorner = Instance.new("UICorner")
@@ -566,7 +566,7 @@ function shitware:New(UILibName)
 
 	MainUIAspectRatioConstraint.Parent = Main
 	MainUIAspectRatioConstraint.AspectRatio = 1.505
-	
+
 	UserInputService.InputBegan:Connect(function(input)
 		if input.KeyCode == toggleKey then
 			local FrameToScale = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main")
