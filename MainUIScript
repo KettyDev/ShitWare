@@ -2,8 +2,9 @@ local shitware = {}
 
 local runService = game:GetService("RunService")
 local tweenInfo3 = TweenInfo.new(0.15, Enum.EasingStyle.Back, Enum.EasingDirection.In)
-local toggleKey = Enum.KeyCode.RightShift
+local toggleKey = Enum.KeyCode.K
 local UserInputService = game:GetService("UserInputService")
+local ContextActionService = game:GetService("ContextActionService")
 local tweenInfo = TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local ScrollingFrametweenInfo = TweenInfo.new(0.1, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
 local tweenInfo2 = TweenInfo.new(0.25, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
@@ -36,6 +37,7 @@ local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 local mouse = Player:GetMouse()
 local Icons = loadstring(game:HttpGet(("https://raw.githubusercontent.com/KettyDev/ShitWare/main/Icons"), true))()
+local LastUpdateDate = "Jul 29 2024"
 
 function shitware:New(UILibName)
 	local LoadingUILIB = Instance.new("ScreenGui")
@@ -67,12 +69,12 @@ function shitware:New(UILibName)
 	MainFrame.Name = "MainFrame"
 	MainFrame.Parent = LoadingUILIB
 	MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-	MainFrame.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+	MainFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 	MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	MainFrame.BorderSizePixel = 0
 	MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
 	MainFrame.Size = UDim2.new(0.303180218, 0, 0.431286544, 0)
-	MainFrame.BackgroundTransparency = 0.3
+	MainFrame.BackgroundTransparency = 0.15
 	UICorner.CornerRadius = UDim.new(0, 20)
 	UICorner.Parent = MainFrame
 	LoadingTItle.Name = "LoadingTItle"
@@ -358,6 +360,72 @@ function shitware:New(UILibName)
 	local BehindInfo1 = Instance.new("Frame")
 	local BehindInfo2 = Instance.new("Frame")
 	local MainUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local SettingsUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local Settings = Instance.new("Frame")
+	local SettingsUICorner = Instance.new("UICorner")
+	local SettingsTopBar = Instance.new("Frame")
+	local SettingsTopBarUICorner = Instance.new("UICorner")
+	local SettingsTopBarBehind = Instance.new("Frame")
+	local SettingsUIScale = Instance.new("UIScale")
+	local SettingsTitle = Instance.new("TextLabel")
+	local SettingsScrollingFrame = Instance.new("ScrollingFrame")
+	local MenuKeybind = Instance.new("Frame")
+	local MenuKeybindText = Instance.new("TextLabel")
+	local MenuKeybindUIListLayout = Instance.new("UIListLayout")
+	local MenuKeybindUIPadding = Instance.new("UIPadding")
+	local TextBox = Instance.new("TextBox")
+	local TextBoxUICorner = Instance.new("UICorner")
+	local ScrollingFrameUIListLayout = Instance.new("UIListLayout")
+	local SettingsUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local MenuKeybindUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local SettingsUIScale = Instance.new("UIScale")
+	local SettingsUICorner = Instance.new("UICorner")
+	local SettingsTopBar = Instance.new("Frame")
+	local SettingsTopBarUICorner = Instance.new("UICorner")
+	local SettingsTopBarBehind = Instance.new("Frame")
+	local SettingsButtonOpen = Instance.new("ImageButton")
+	local SettingsButtonOpenUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local SettingsImage = Instance.new("ImageLabel")
+	local SettingsImageUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local SettingsTitle = Instance.new("TextLabel")
+	local InformationFrame = Instance.new("Frame")
+	local InformationFrameUIListLayout = Instance.new("UIListLayout")
+	local UsernameFrame = Instance.new("Frame")
+	local UsernameFrameUIListLayout = Instance.new("UIListLayout")
+	local UsernameTitle = Instance.new("TextLabel")
+	local UsernameText = Instance.new("TextLabel")
+	local LastUpdateTime = Instance.new("Frame")
+	local LastUpdateTimeUIListLayout = Instance.new("UIListLayout")
+	local LastUpdateTimeTitle = Instance.new("TextLabel")
+	local LastUpdateTimeText = Instance.new("TextLabel")
+	local ExecutorUsing = Instance.new("Frame")
+	local ExecutorUsingUIListLayout = Instance.new("UIListLayout")
+	local ExecutorTitle = Instance.new("TextLabel")
+	local ExecutorUsingText = Instance.new("TextLabel")
+	local SettingsUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local DiscordFrame = Instance.new("Frame")
+	local DiscordFrameUIListLayout = Instance.new("UIListLayout")
+	local DiscordLinkText = Instance.new("TextLabel")
+	local DiscordServerImage = Instance.new("ImageLabel")
+	local DiscordServerImageUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local DiscordServerImageUICorner = Instance.new("UICorner")
+	local DiscordFrameUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local SettingsScrollingFrame = Instance.new("ScrollingFrame")
+	local SettingsScrollingFrameUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local MenuKeybindSetting = Instance.new("Frame")
+	local MenuKeybindTitle = Instance.new("TextLabel")
+	local MenuKeybindSettingUIListLayout = Instance.new("UIListLayout")
+	local MenuKeybindSettingUIPadding = Instance.new("UIPadding")
+	local MenuKeybindSettingUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local MenuKeybindButton = Instance.new("TextButton")
+	local MenuKeybindButtonUICorner = Instance.new("UICorner")
+	local MenuKeybindButtonTitle = Instance.new("TextLabel")
+	local MenuKeybindButtonUIListLayout = Instance.new("UIListLayout")
+	local MenuKeybindButtonUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local SettingsCloseButton = Instance.new("ImageButton")
+	local SettingsButtonUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local SettingsButtonUIScale = Instance.new("UIScale")
+	local SettingsCloseButtonUIScale = Instance.new("UIScale")
 
 	UILib.Enabled = false
 	UILib.Name = "UILib"
@@ -368,11 +436,11 @@ function shitware:New(UILibName)
 	Main.Name = "Main"
 	Main.Parent = UILib
 	Main.AnchorPoint = Vector2.new(0.5, 0.5)
-	Main.BackgroundColor3 = Color3.fromRGB(1, 17, 33)
-	Main.BackgroundTransparency = 0.2
+	Main.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	Main.BackgroundTransparency = 0.15
 	Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Main.BorderSizePixel = 0
-	Main.ClipsDescendants = true
+	Main.ClipsDescendants = false
 	Main.Position = UDim2.new(0.5, 0, 0.5, 0)
 	Main.Size = UDim2.new(0.469, 0, 0.644, 0)
 	local UIScale = Instance.new("UIScale")
@@ -385,11 +453,12 @@ function shitware:New(UILibName)
 
 	TabHolder.Name = "TabHolder"
 	TabHolder.Parent = Main
-	TabHolder.BackgroundColor3 = Color3.fromRGB(9, 9, 19)
+	TabHolder.BackgroundColor3 = Color3.fromRGB(7, 9, 12)
 	TabHolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TabHolder.BorderSizePixel = 0
 	TabHolder.Position = UDim2.new(0.264753461, 0, 0, 0)
 	TabHolder.Size = UDim2.new(0.735246599, 0, 1, 0)
+	TabHolder.BackgroundTransparency = 0.1
 
 	TabHolderUICorner.CornerRadius = UDim.new(0, 10)
 	TabHolderUICorner.Parent = TabHolder
@@ -402,6 +471,7 @@ function shitware:New(UILibName)
 	BehindTabHolder.BorderSizePixel = 0
 	BehindTabHolder.Position = UDim2.new(0.482457608, 0, 0.5, 0)
 	BehindTabHolder.Size = UDim2.new(0.964915216, 0, 1, 0)
+	BehindTabHolder.Visible = false
 
 	TopBarStripe.Name = "TopBarStripe"
 	TopBarStripe.Parent = TabHolder
@@ -411,11 +481,12 @@ function shitware:New(UILibName)
 	TopBarStripe.BorderSizePixel = 0
 	TopBarStripe.Position = UDim2.new(0.499502242, 0, 0.0977560952, 0)
 	TopBarStripe.Size = UDim2.new(0.999000013, 0, 0.0170000009, 0)
+	TopBarStripe.Visible = false
 
 	TopBar.Name = "TopBar"
 	TopBar.Parent = TabHolder
 	TopBar.AnchorPoint = Vector2.new(0.5, 0.5)
-	TopBar.BackgroundColor3 = Color3.fromRGB(9, 9, 19)
+	TopBar.BackgroundColor3 = Color3.fromRGB(14, 17, 21)
 	TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TopBar.BorderSizePixel = 0
 	TopBar.Position = UDim2.new(0.499004424, 0, 0.0522497855, 0)
@@ -428,12 +499,29 @@ function shitware:New(UILibName)
 	TopBarBehind.Name = "TopBarBehind"
 	TopBarBehind.Parent = TopBar
 	TopBarBehind.AnchorPoint = Vector2.new(0.5, 0.5)
-	TopBarBehind.BackgroundColor3 = Color3.fromRGB(9, 9, 19)
+	TopBarBehind.BackgroundColor3 = Color3.fromRGB(14, 17, 21)
 	TopBarBehind.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TopBarBehind.BorderSizePixel = 0
 	TopBarBehind.Position = UDim2.new(0.500997424, 0, 0.748112321, 0)
 	TopBarBehind.Size = UDim2.new(1.00199485, 0, 0.503775418, 0)
 	TopBarBehind.ZIndex = 2
+	
+	SettingsButtonOpen.Name = "SettingsButton"
+	SettingsButtonOpen.Parent = TopBar
+	SettingsButtonOpen.AnchorPoint = Vector2.new(0.5, 0.5)
+	SettingsButtonOpen.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	SettingsButtonOpen.BackgroundTransparency = 1.000
+	SettingsButtonOpen.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SettingsButtonOpen.BorderSizePixel = 0
+	SettingsButtonOpen.Position = UDim2.new(0.957000017, 0, 0.5, 0)
+	SettingsButtonOpen.Size = UDim2.new(0.0677668378, 0, 0.645680606, 0)
+	SettingsButtonOpen.ZIndex = 3
+	SettingsButtonOpen.Image = "rbxassetid://18701575056"
+	SettingsButtonOpen.ImageColor3 = Color3.fromRGB(167, 166, 170)
+	SettingsButtonOpen:SetAttribute("Visible", false)
+	SettingsButtonUIScale.Parent = SettingsButtonOpen
+
+	SettingsButtonOpenUIAspectRatioConstraint.Parent = SettingsButtonOpen
 
 	LogoFrame.Name = "Logo"
 	LogoFrame.Parent = Main
@@ -566,7 +654,503 @@ function shitware:New(UILibName)
 
 	MainUIAspectRatioConstraint.Parent = Main
 	MainUIAspectRatioConstraint.AspectRatio = 1.505
+	
+	
+	
+	
+	
+	
+	Settings.Name = "Settings"
+	Settings.Parent = UILib.Main
+	Settings.BackgroundColor3 = Color3.fromRGB(7, 9, 12)
+	Settings.BackgroundTransparency = 0.020
+	Settings.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Settings.BorderSizePixel = 0
+	Settings.Position = UDim2.new(1.03326559, 0, -0.00227013347, 0)
+	Settings.Size = UDim2.new(0.38615483, 0, 0.898986578, 0)
 
+	SettingsUIScale.Name = "SettingsUIScale"
+	SettingsUIScale.Parent = Settings
+
+	SettingsUICorner.CornerRadius = UDim.new(0, 10)
+	SettingsUICorner.Name = "SettingsUICorner"
+	SettingsUICorner.Parent = Settings
+	
+	SettingsUIScale.Scale = 0
+
+	SettingsTopBar.Name = "SettingsTopBar"
+	SettingsTopBar.Parent = Settings
+	SettingsTopBar.AnchorPoint = Vector2.new(0.5, 0.5)
+	SettingsTopBar.BackgroundColor3 = Color3.fromRGB(14, 17, 21)
+	SettingsTopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SettingsTopBar.BorderSizePixel = 0
+	SettingsTopBar.Position = UDim2.new(0.499004424, 0, 0.0320477672, 0)
+	SettingsTopBar.Size = UDim2.new(0.998008847, 0, 0.0590450689, 0)
+	SettingsTopBar.ZIndex = 2
+
+	SettingsTopBarUICorner.CornerRadius = UDim.new(0, 10)
+	SettingsTopBarUICorner.Name = "SettingsTopBarUICorner"
+	SettingsTopBarUICorner.Parent = SettingsTopBar
+
+	SettingsTopBarBehind.Name = "SettingsTopBarBehind"
+	SettingsTopBarBehind.Parent = SettingsTopBar
+	SettingsTopBarBehind.AnchorPoint = Vector2.new(0.5, 0.5)
+	SettingsTopBarBehind.BackgroundColor3 = Color3.fromRGB(14, 17, 21)
+	SettingsTopBarBehind.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SettingsTopBarBehind.BorderSizePixel = 0
+	SettingsTopBarBehind.Position = UDim2.new(0.500997663, 0, 0.762519896, 0)
+	SettingsTopBarBehind.Size = UDim2.new(1.00199533, 0, 0.474959821, 0)
+	SettingsTopBarBehind.ZIndex = 2
+
+	SettingsCloseButton.Name = "SettingsCloseButton"
+	SettingsCloseButton.Parent = SettingsTopBar
+	SettingsCloseButton.AnchorPoint = Vector2.new(0.5, 0.5)
+	SettingsCloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	SettingsCloseButton.BackgroundTransparency = 1.000
+	SettingsCloseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SettingsCloseButton.BorderSizePixel = 0
+	SettingsCloseButton.Position = UDim2.new(0.939999998, 0, 0.550000012, 0)
+	SettingsCloseButton.Size = UDim2.new(0.0772614107, 0, 0.886993825, 0)
+	SettingsCloseButton.ZIndex = 3
+	SettingsCloseButton.Image = "rbxassetid://18706953288"
+	SettingsCloseButton.ImageColor3 = Color3.fromRGB(167, 166, 170)
+	SettingsCloseButtonUIScale.Parent = SettingsCloseButton
+
+	SettingsButtonUIAspectRatioConstraint.Name = "SettingsButtonUIAspectRatioConstraint"
+	SettingsButtonUIAspectRatioConstraint.Parent = SettingsCloseButton
+	SettingsButtonUIAspectRatioConstraint.AspectRatio = 0.952
+
+	SettingsImage.Name = "SettingsImage"
+	SettingsImage.Parent = SettingsTopBar
+	SettingsImage.AnchorPoint = Vector2.new(0.5, 0.5)
+	SettingsImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	SettingsImage.BackgroundTransparency = 1.000
+	SettingsImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SettingsImage.BorderSizePixel = 0
+	SettingsImage.Position = UDim2.new(0.0500000007, 0, 0.5, 0)
+	SettingsImage.Size = UDim2.new(0.0704527795, 0, 0.769828439, 0)
+	SettingsImage.ZIndex = 3
+	SettingsImage.Image = "rbxassetid://18702422763"
+	SettingsImage.ImageColor3 = Color3.fromRGB(13, 127, 186)
+
+	SettingsImageUIAspectRatioConstraint.Name = "SettingsImageUIAspectRatioConstraint"
+	SettingsImageUIAspectRatioConstraint.Parent = SettingsImage
+	SettingsImageUIAspectRatioConstraint.AspectRatio = 1.000
+
+	SettingsTitle.Name = "SettingsTitle"
+	SettingsTitle.Parent = SettingsTopBar
+	SettingsTitle.AnchorPoint = Vector2.new(0.5, 0.5)
+	SettingsTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	SettingsTitle.BackgroundTransparency = 1.000
+	SettingsTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SettingsTitle.BorderSizePixel = 0
+	SettingsTitle.LayoutOrder = 2
+	SettingsTitle.Position = UDim2.new(0.289999992, 0, 0.5, 0)
+	SettingsTitle.Size = UDim2.new(0.384875894, 0, 0.777496994, 0)
+	SettingsTitle.ZIndex = 3
+	SettingsTitle.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+	SettingsTitle.Text = "Shitware Settings"
+	SettingsTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	SettingsTitle.TextScaled = true
+	SettingsTitle.TextSize = 14.000
+	SettingsTitle.TextWrapped = true
+
+	InformationFrame.Name = "InformationFrame"
+	InformationFrame.Parent = Settings
+	InformationFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	InformationFrame.BackgroundTransparency = 1.000
+	InformationFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	InformationFrame.BorderSizePixel = 0
+	InformationFrame.Position = UDim2.new(0.04296875, 0, 0.0732323229, 0)
+	InformationFrame.Size = UDim2.new(0.90625, 0, 0.178484827, 0)
+
+	InformationFrameUIListLayout.Name = "InformationFrameUIListLayout"
+	InformationFrameUIListLayout.Parent = InformationFrame
+	InformationFrameUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	InformationFrameUIListLayout.Padding = UDim.new(0, 3)
+
+	UsernameFrame.Name = "UsernameFrame"
+	UsernameFrame.Parent = InformationFrame
+	UsernameFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	UsernameFrame.BackgroundTransparency = 1.000
+	UsernameFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	UsernameFrame.BorderSizePixel = 0
+	UsernameFrame.LayoutOrder = 1
+	UsernameFrame.Size = UDim2.new(1.00000012, 0, 0.278781891, 0)
+
+	UsernameFrameUIListLayout.Name = "UsernameFrameUIListLayout"
+	UsernameFrameUIListLayout.Parent = UsernameFrame
+	UsernameFrameUIListLayout.FillDirection = Enum.FillDirection.Horizontal
+	UsernameFrameUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	UsernameFrameUIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+	UsernameFrameUIListLayout.Padding = UDim.new(0, 3)
+
+	UsernameTitle.Name = "UsernameTitle"
+	UsernameTitle.Parent = UsernameFrame
+	UsernameTitle.AnchorPoint = Vector2.new(0.5, 0.5)
+	UsernameTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	UsernameTitle.BackgroundTransparency = 1.000
+	UsernameTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	UsernameTitle.BorderSizePixel = 0
+	UsernameTitle.LayoutOrder = 2
+	UsernameTitle.Position = UDim2.new(0.153426483, 0, 0.511270165, 0)
+	UsernameTitle.Size = UDim2.new(0.306851953, 0, 0.788884044, 0)
+	UsernameTitle.ZIndex = 3
+	UsernameTitle.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+	UsernameTitle.Text = "Username:"
+	UsernameTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	UsernameTitle.TextScaled = true
+	UsernameTitle.TextSize = 14.000
+	UsernameTitle.TextWrapped = true
+
+	UsernameText.Name = "UsernameText"
+	UsernameText.Parent = UsernameFrame
+	UsernameText.AnchorPoint = Vector2.new(0.5, 0.5)
+	UsernameText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	UsernameText.BackgroundTransparency = 1.000
+	UsernameText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	UsernameText.BorderSizePixel = 0
+	UsernameText.LayoutOrder = 2
+	UsernameText.Position = UDim2.new(0.667645335, 0, 0.522539794, 0)
+	UsernameText.Size = UDim2.new(0.671999991, 0, 0.766344249, 0)
+	UsernameText.ZIndex = 3
+	UsernameText.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+	UsernameText.Text = Player.DisplayName
+	UsernameText.TextColor3 = Color3.fromRGB(13, 140, 207)
+	UsernameText.TextScaled = true
+	UsernameText.TextSize = 14.000
+	UsernameText.TextWrapped = true
+	UsernameText.TextXAlignment = Enum.TextXAlignment.Left
+
+	LastUpdateTime.Name = "LastUpdateTime"
+	LastUpdateTime.Parent = InformationFrame
+	LastUpdateTime.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	LastUpdateTime.BackgroundTransparency = 1.000
+	LastUpdateTime.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	LastUpdateTime.BorderSizePixel = 0
+	LastUpdateTime.LayoutOrder = 1
+	LastUpdateTime.Position = UDim2.new(0, 0, 0.337936431, 0)
+	LastUpdateTime.Size = UDim2.new(1.00000012, 0, 0.278781861, 0)
+
+	LastUpdateTimeUIListLayout.Name = "LastUpdateTimeUIListLayout"
+	LastUpdateTimeUIListLayout.Parent = LastUpdateTime
+	LastUpdateTimeUIListLayout.FillDirection = Enum.FillDirection.Horizontal
+	LastUpdateTimeUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	LastUpdateTimeUIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+	LastUpdateTimeUIListLayout.Padding = UDim.new(0, 1)
+
+	LastUpdateTimeTitle.Name = "LastUpdateTimeTitle"
+	LastUpdateTimeTitle.Parent = LastUpdateTime
+	LastUpdateTimeTitle.AnchorPoint = Vector2.new(0.5, 0.5)
+	LastUpdateTimeTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	LastUpdateTimeTitle.BackgroundTransparency = 1.000
+	LastUpdateTimeTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	LastUpdateTimeTitle.BorderSizePixel = 0
+	LastUpdateTimeTitle.LayoutOrder = 2
+	LastUpdateTimeTitle.Position = UDim2.new(0.138339818, 0, 0.50000006, 0)
+	LastUpdateTimeTitle.Size = UDim2.new(0.268999994, 0, 0.788999975, 0)
+	LastUpdateTimeTitle.ZIndex = 3
+	LastUpdateTimeTitle.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+	LastUpdateTimeTitle.Text = "Updated:"
+	LastUpdateTimeTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	LastUpdateTimeTitle.TextScaled = true
+	LastUpdateTimeTitle.TextSize = 14.000
+	LastUpdateTimeTitle.TextWrapped = true
+	LastUpdateTimeTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	LastUpdateTimeText.Name = "LastUpdateTimeText"
+	LastUpdateTimeText.Parent = LastUpdateTime
+	LastUpdateTimeText.AnchorPoint = Vector2.new(0.5, 0.5)
+	LastUpdateTimeText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	LastUpdateTimeText.BackgroundTransparency = 1.000
+	LastUpdateTimeText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	LastUpdateTimeText.BorderSizePixel = 0
+	LastUpdateTimeText.LayoutOrder = 2
+	LastUpdateTimeText.Position = UDim2.new(0.60836935, 0, 0.500000298, 0)
+	LastUpdateTimeText.Size = UDim2.new(0.671999991, 0, 0.766344249, 0)
+	LastUpdateTimeText.ZIndex = 3
+	LastUpdateTimeText.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+	LastUpdateTimeText.Text = LastUpdateDate
+	LastUpdateTimeText.TextColor3 = Color3.fromRGB(13, 140, 207)
+	LastUpdateTimeText.TextScaled = true
+	LastUpdateTimeText.TextSize = 14.000
+	LastUpdateTimeText.TextWrapped = true
+	LastUpdateTimeText.TextXAlignment = Enum.TextXAlignment.Left
+
+	ExecutorUsing.Name = "ExecutorUsing"
+	ExecutorUsing.Parent = InformationFrame
+	ExecutorUsing.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ExecutorUsing.BackgroundTransparency = 1.000
+	ExecutorUsing.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ExecutorUsing.BorderSizePixel = 0
+	ExecutorUsing.LayoutOrder = 3
+	ExecutorUsing.Position = UDim2.new(0, 0, 0.675872445, 0)
+	ExecutorUsing.Size = UDim2.new(1.00000012, 0, 0.27878198, 0)
+
+	ExecutorUsingUIListLayout.Name = "ExecutorUsingUIListLayout"
+	ExecutorUsingUIListLayout.Parent = ExecutorUsing
+	ExecutorUsingUIListLayout.FillDirection = Enum.FillDirection.Horizontal
+	ExecutorUsingUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	ExecutorUsingUIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+	ExecutorUsingUIListLayout.Padding = UDim.new(0, 3)
+
+	ExecutorTitle.Name = "ExecutorTitle"
+	ExecutorTitle.Parent = ExecutorUsing
+	ExecutorTitle.AnchorPoint = Vector2.new(0.5, 0.5)
+	ExecutorTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ExecutorTitle.BackgroundTransparency = 1.000
+	ExecutorTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ExecutorTitle.BorderSizePixel = 0
+	ExecutorTitle.LayoutOrder = 2
+	ExecutorTitle.Position = UDim2.new(0.138339818, 0, 0.50000006, 0)
+	ExecutorTitle.Size = UDim2.new(0.275000006, 0, 0.788999975, 0)
+	ExecutorTitle.ZIndex = 3
+	ExecutorTitle.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+	ExecutorTitle.Text = "Executor:"
+	ExecutorTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	ExecutorTitle.TextScaled = true
+	ExecutorTitle.TextSize = 14.000
+	ExecutorTitle.TextWrapped = true
+	ExecutorTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	ExecutorUsingText.Name = "ExecutorUsingText"
+	ExecutorUsingText.Parent = ExecutorUsing
+	ExecutorUsingText.AnchorPoint = Vector2.new(0.5, 0.5)
+	ExecutorUsingText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ExecutorUsingText.BackgroundTransparency = 1.000
+	ExecutorUsingText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ExecutorUsingText.BorderSizePixel = 0
+	ExecutorUsingText.LayoutOrder = 2
+	ExecutorUsingText.Position = UDim2.new(0.60836935, 0, 0.500000298, 0)
+	ExecutorUsingText.Size = UDim2.new(0.671999991, 0, 0.766344249, 0)
+	ExecutorUsingText.ZIndex = 3
+	ExecutorUsingText.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+	ExecutorUsingText.Text = "Wave"
+	ExecutorUsingText.TextColor3 = Color3.fromRGB(13, 140, 207)
+	ExecutorUsingText.TextScaled = true
+	ExecutorUsingText.TextSize = 14.000
+	ExecutorUsingText.TextWrapped = true
+	ExecutorUsingText.TextXAlignment = Enum.TextXAlignment.Left
+
+	SettingsUIAspectRatioConstraint.Name = "SettingsUIAspectRatioConstraint"
+	SettingsUIAspectRatioConstraint.Parent = Settings
+	SettingsUIAspectRatioConstraint.AspectRatio = 0.646
+
+	DiscordFrame.Name = "DiscordFrame"
+	DiscordFrame.Parent = Settings
+	DiscordFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	DiscordFrame.BackgroundTransparency = 1.000
+	DiscordFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	DiscordFrame.BorderSizePixel = 0
+	DiscordFrame.Position = UDim2.new(0, 0, 0.26010102, 0)
+	DiscordFrame.Size = UDim2.new(0.99609375, 0, 0.0732323229, 0)
+
+	DiscordFrameUIListLayout.Name = "DiscordFrameUIListLayout"
+	DiscordFrameUIListLayout.Parent = DiscordFrame
+	DiscordFrameUIListLayout.FillDirection = Enum.FillDirection.Horizontal
+	DiscordFrameUIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	DiscordFrameUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	DiscordFrameUIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+
+	DiscordLinkText.Name = "DiscordLinkText"
+	DiscordLinkText.Parent = DiscordFrame
+	DiscordLinkText.AnchorPoint = Vector2.new(0.5, 0.5)
+	DiscordLinkText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	DiscordLinkText.BackgroundTransparency = 1.000
+	DiscordLinkText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	DiscordLinkText.BorderSizePixel = 0
+	DiscordLinkText.LayoutOrder = 2
+	DiscordLinkText.Position = UDim2.new(0.576674998, 0, 0.499999762, 0)
+	DiscordLinkText.Size = UDim2.new(0.577601254, 0, 0.593999982, 0)
+	DiscordLinkText.ZIndex = 3
+	DiscordLinkText.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+	DiscordLinkText.Text = "dsc.gg/shitwaredc"
+	DiscordLinkText.TextColor3 = Color3.fromRGB(255, 255, 255)
+	DiscordLinkText.TextScaled = true
+	DiscordLinkText.TextSize = 14.000
+	DiscordLinkText.TextWrapped = true
+
+	DiscordServerImage.Name = "DiscordServerImage"
+	DiscordServerImage.Parent = DiscordFrame
+	DiscordServerImage.AnchorPoint = Vector2.new(0.5, 0.5)
+	DiscordServerImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	DiscordServerImage.BackgroundTransparency = 1.000
+	DiscordServerImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	DiscordServerImage.BorderSizePixel = 0
+	DiscordServerImage.Position = UDim2.new(0.186154827, 0, 0.547627211, 0)
+	DiscordServerImage.Size = UDim2.new(0.102951467, 0, 0.905263484, 0)
+	DiscordServerImage.ZIndex = 3
+	DiscordServerImage.Image = "rbxassetid://18707258314"
+	DiscordServerImage.ImageColor3 = Color3.fromRGB(13, 127, 186)
+
+	DiscordServerImageUIAspectRatioConstraint.Name = "DiscordServerImageUIAspectRatioConstraint"
+	DiscordServerImageUIAspectRatioConstraint.Parent = DiscordServerImage
+	DiscordServerImageUIAspectRatioConstraint.AspectRatio = 1.000
+
+	DiscordServerImageUICorner.CornerRadius = UDim.new(1, 0)
+	DiscordServerImageUICorner.Name = "DiscordServerImageUICorner"
+	DiscordServerImageUICorner.Parent = DiscordServerImage
+
+	DiscordFrameUIAspectRatioConstraint.Name = "DiscordFrameUIAspectRatioConstraint"
+	DiscordFrameUIAspectRatioConstraint.Parent = DiscordFrame
+	DiscordFrameUIAspectRatioConstraint.AspectRatio = 8.793
+
+	SettingsScrollingFrame.Name = "SettingsScrollingFrame"
+	SettingsScrollingFrame.Parent = Settings
+	SettingsScrollingFrame.Active = true
+	SettingsScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	SettingsScrollingFrame.BackgroundTransparency = 1.000
+	SettingsScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SettingsScrollingFrame.BorderSizePixel = 0
+	SettingsScrollingFrame.Position = UDim2.new(0.0199999996, 0, 0.340000004, 0)
+	SettingsScrollingFrame.Size = UDim2.new(0.953125, 0, 0.643939376, 0)
+	SettingsScrollingFrame.ScrollBarThickness = 8
+
+	SettingsScrollingFrameUIAspectRatioConstraint.Name = "SettingsScrollingFrameUIAspectRatioConstraint"
+	SettingsScrollingFrameUIAspectRatioConstraint.Parent = SettingsScrollingFrame
+	SettingsScrollingFrameUIAspectRatioConstraint.AspectRatio = 0.957
+
+	MenuKeybindSetting.Name = "MenuKeybindSetting"
+	MenuKeybindSetting.Parent = SettingsScrollingFrame
+	MenuKeybindSetting.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	MenuKeybindSetting.BackgroundTransparency = 1.000
+	MenuKeybindSetting.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MenuKeybindSetting.BorderSizePixel = 0
+	MenuKeybindSetting.Size = UDim2.new(1, 0, 0.204999998, 0)
+
+	MenuKeybindTitle.Name = "MenuKeybindTitle"
+	MenuKeybindTitle.Parent = MenuKeybindSetting
+	MenuKeybindTitle.BackgroundColor3 = Color3.fromRGB(157, 157, 157)
+	MenuKeybindTitle.BackgroundTransparency = 1.000
+	MenuKeybindTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MenuKeybindTitle.BorderSizePixel = 0
+	MenuKeybindTitle.LayoutOrder = 1
+	MenuKeybindTitle.Position = UDim2.new(0, 0, 0.235499918, 0)
+	MenuKeybindTitle.Size = UDim2.new(0.533769131, 0, 0.529000044, 0)
+	MenuKeybindTitle.ZIndex = 5
+	MenuKeybindTitle.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
+	MenuKeybindTitle.Text = "Menu Keybind"
+	MenuKeybindTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	MenuKeybindTitle.TextScaled = true
+	MenuKeybindTitle.TextSize = 14.000
+	MenuKeybindTitle.TextWrapped = true
+	MenuKeybindTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	MenuKeybindSettingUIListLayout.Name = "MenuKeybindSettingUIListLayout"
+	MenuKeybindSettingUIListLayout.Parent = MenuKeybindSetting
+	MenuKeybindSettingUIListLayout.FillDirection = Enum.FillDirection.Horizontal
+	MenuKeybindSettingUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	MenuKeybindSettingUIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+
+	MenuKeybindSettingUIPadding.Name = "MenuKeybindSettingUIPadding"
+	MenuKeybindSettingUIPadding.Parent = MenuKeybindSetting
+	MenuKeybindSettingUIPadding.PaddingLeft = UDim.new(0, 10)
+
+	MenuKeybindSettingUIAspectRatioConstraint.Name = "MenuKeybindSettingUIAspectRatioConstraint"
+	MenuKeybindSettingUIAspectRatioConstraint.Parent = MenuKeybindSetting
+	MenuKeybindSettingUIAspectRatioConstraint.AspectRatio = 8.086
+
+	MenuKeybindButton.Name = "MenuKeybindButton"
+	MenuKeybindButton.Parent = MenuKeybindSetting
+	MenuKeybindButton.BackgroundColor3 = Color3.fromRGB(7, 5, 9)
+	MenuKeybindButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MenuKeybindButton.BorderSizePixel = 0
+	MenuKeybindButton.LayoutOrder = 2
+	MenuKeybindButton.Size = UDim2.new(0.38499999, 0, 0.950999975, 0)
+	MenuKeybindButton.Font = Enum.Font.SourceSans
+	MenuKeybindButton.Text = ""
+	MenuKeybindButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+	MenuKeybindButton.TextSize = 14.000
+
+	MenuKeybindButtonUICorner.CornerRadius = UDim.new(0, 10)
+	MenuKeybindButtonUICorner.Name = "MenuKeybindButtonUICorner"
+	MenuKeybindButtonUICorner.Parent = MenuKeybindButton
+
+	MenuKeybindButtonTitle.Name = "Title"
+	MenuKeybindButtonTitle.Parent = MenuKeybindButton
+	MenuKeybindButtonTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	MenuKeybindButtonTitle.BackgroundTransparency = 1.000
+	MenuKeybindButtonTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MenuKeybindButtonTitle.BorderSizePixel = 0
+	MenuKeybindButtonTitle.LayoutOrder = 2
+	MenuKeybindButtonTitle.Position = UDim2.new(0, 0, 0.751723707, 0)
+	MenuKeybindButtonTitle.Size = UDim2.new(1, 0, 0.600000024, 0)
+	MenuKeybindButtonTitle.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+	MenuKeybindButtonTitle.Text = "K"
+	MenuKeybindButtonTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	MenuKeybindButtonTitle.TextScaled = true
+	MenuKeybindButtonTitle.TextSize = 14.000
+	MenuKeybindButtonTitle.TextWrapped = true
+
+	MenuKeybindButtonUIListLayout.Name = "MenuKeybindButtonUIListLayout"
+	MenuKeybindButtonUIListLayout.Parent = MenuKeybindButton
+	MenuKeybindButtonUIListLayout.FillDirection = Enum.FillDirection.Horizontal
+	MenuKeybindButtonUIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	MenuKeybindButtonUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	MenuKeybindButtonUIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+
+	MenuKeybindButtonUIAspectRatioConstraint.Name = "MenuKeybindButtonUIAspectRatioConstraint"
+	MenuKeybindButtonUIAspectRatioConstraint.Parent = MenuKeybindButton
+	MenuKeybindButtonUIAspectRatioConstraint.AspectRatio = 3.108
+	
+	SettingsCloseButton.MouseButton1Click:Connect(function()
+		SettingsButtonOpen:SetAttribute("Visible", false)
+
+		task.spawn(function()
+			tweenService:Create(SettingsCloseButton.UIScale, tweenInfo2, { Scale = 1.1 }):Play()
+			task.wait(0.05)
+			tweenService:Create(SettingsCloseButton.UIScale, tweenInfo2, { Scale = 1 }):Play()
+		end)
+
+		tweenService:Create(SettingsUIScale, tweenInfo2, { Scale = 0 }):Play()
+	end)
+	
+	SettingsButtonOpen.MouseButton1Click:Connect(function()
+		SettingsButtonOpen:SetAttribute("Visible", not SettingsButtonOpen:GetAttribute("Visible"))
+		
+		task.spawn(function()
+			tweenService:Create(SettingsButtonOpen.UIScale, tweenInfo2, { Scale = 1.1 }):Play()
+			task.wait(0.05)
+			tweenService:Create(SettingsButtonOpen.UIScale, tweenInfo2, { Scale = 1 }):Play()
+		end)
+
+		if SettingsButtonOpen:GetAttribute("Visible") == true then
+			tweenService:Create(SettingsUIScale, tweenInfo2, { Scale = 1 }):Play()
+		else
+			tweenService:Create(SettingsUIScale, tweenInfo2, { Scale = 0 }):Play()
+		end
+	end)
+	
+	local function waitForKeyPress()
+		local keyPressed = nil
+		local connection
+
+		local function onInputBegan(input, gameProcessed)
+			if input.UserInputType == Enum.UserInputType.Keyboard then
+				keyPressed = input.KeyCode
+				connection:Disconnect()
+			end
+		end
+
+		connection = UserInputService.InputBegan:Connect(onInputBegan)
+		repeat
+			wait()
+		until keyPressed
+
+		return keyPressed
+	end
+
+	-- Handle keybind change
+	MenuKeybindButton.MouseButton1Click:Connect(function()
+		MenuKeybindButtonTitle.Text = "Press any key."
+		local newKeybind = waitForKeyPress()
+		if newKeybind then
+			MenuKeybindButtonTitle.Text = newKeybind.Name
+			toggleKey = newKeybind
+		end
+	end)
+	
+	
 	UserInputService.InputBegan:Connect(function(input)
 		if input.KeyCode == toggleKey then
 			local FrameToScale = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main")
@@ -621,7 +1205,7 @@ function shitware:New(UILibName)
 	tweenService:Create(blur, tweenInfo2, {Size = 24}):Play()
 end
 
-function shitware:AddSection(SectionName)
+function shitware:AddTabSection(SectionName)
 	local NewSection = Instance.new("Frame")
 	local NewSectionUIListLayout = Instance.new("UIListLayout")
 	local SectionTitle = Instance.new("TextLabel")
@@ -862,15 +1446,21 @@ function shitware:AddTabBox(TabName, TabBoxName)
 		local TabBoxFunctions = Instance.new("ScrollingFrame")
 		local TabBoxFunctionsUIListLayout = Instance.new("UIListLayout")
 		local TabNameText = Instance.new("TextLabel")
+		local TabBoxUIStroke = Instance.new("UIStroke")
 
 		TabBox.Name = TabName
 		TabBox.Parent = Tab
 		TabBox.AnchorPoint = Vector2.new(0.5, 0.5)
-		TabBox.BackgroundColor3 = Color3.fromRGB(1, 17, 33)
+		TabBox.BackgroundColor3 = Color3.fromRGB(7, 5, 9)
 		TabBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		TabBox.BorderSizePixel = 0
 		TabBox.Position = UDim2.new(0.5, 0, 0.5, 0)
 		TabBox.Size = UDim2.new(1, 0, 1, 0)
+		
+		TabBoxUIStroke.ApplyStrokeMode = 1
+		TabBoxUIStroke.Thickness = 1
+		TabBoxUIStroke.Color = Color3.fromRGB(4, 29, 42)
+		TabBoxUIStroke.Parent = TabBox
 
 		TabBoxUICorner.CornerRadius = UDim.new(0, 9)
 		TabBoxUICorner.Parent = TabBox
@@ -907,7 +1497,7 @@ function shitware:AddTabBox(TabName, TabBoxName)
 		TabBoxTopBarTopBarStripe.Name = "TopBarStripe"
 		TabBoxTopBarTopBarStripe.Parent = TabBoxTopBar
 		TabBoxTopBarTopBarStripe.AnchorPoint = Vector2.new(0.5, 0.5)
-		TabBoxTopBarTopBarStripe.BackgroundColor3 = Color3.fromRGB(2, 29, 57)
+		TabBoxTopBarTopBarStripe.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
 		TabBoxTopBarTopBarStripe.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		TabBoxTopBarTopBarStripe.BorderSizePixel = 0
 		TabBoxTopBarTopBarStripe.Position = UDim2.new(0.503792405, 0, 0.797499895, 0)
@@ -1039,6 +1629,166 @@ function shitware:AddToggle(TabName, ToggleText, callback)
 
 			if callback then
 				callback(KNOB:GetAttribute("Toggle"))
+			end
+		end)
+	end
+end
+
+function shitware:AddSlider(TabName, SliderText, MinValue, MaxValue, callback)
+	local Tab = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main"):WaitForChild("TabHolder"):FindFirstChild(TabName):FindFirstChild(TabName)
+	
+	if Tab then
+		local SliderFunction = Instance.new("Frame")
+		local SliderTextLabel = Instance.new("TextLabel")
+		local SliderUIListLayout = Instance.new("UIListLayout")
+		local SliderUIPadding = Instance.new("UIPadding")
+		local SliderBG = Instance.new("Frame")
+		local SliderBGUICorner = Instance.new("UICorner")
+		local Slider = Instance.new("TextButton")
+		local UICorner_2 = Instance.new("UICorner")
+		local SliderBGUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+		local SliderFunctionUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+		local Trigger = Instance.new("TextButton")
+		local TriggerUIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+		local SliderAmount = Instance.new("TextLabel")
+		local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+
+		SliderFunction.Name = "Slider"
+		SliderFunction.Parent = Tab.Functions
+		SliderFunction.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		SliderFunction.BackgroundTransparency = 1.000
+		SliderFunction.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		SliderFunction.BorderSizePixel = 0
+		SliderFunction.Position = UDim2.new(0, 0, 0.0621259548, 0)
+		SliderFunction.Size = UDim2.new(1, 0, 0.276441187, 0)
+
+		SliderTextLabel.Name = "SliderText"
+		SliderTextLabel.Parent = SliderFunction
+		SliderTextLabel.BackgroundColor3 = Color3.fromRGB(157, 157, 157)
+		SliderTextLabel.BackgroundTransparency = 1.000
+		SliderTextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		SliderTextLabel.BorderSizePixel = 0
+		SliderTextLabel.LayoutOrder = 1
+		SliderTextLabel.Position = UDim2.new(0, 0, 0.235500291, 0)
+		SliderTextLabel.Size = UDim2.new(0.598377883, 0, 0.528999984, 0)
+		SliderTextLabel.ZIndex = 5
+		SliderTextLabel.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
+		SliderTextLabel.Text = SliderText
+		SliderTextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+		SliderTextLabel.TextScaled = true
+		SliderTextLabel.TextSize = 14.000
+		SliderTextLabel.TextWrapped = true
+		SliderTextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+		SliderUIListLayout.Parent = SliderFunction
+		SliderUIListLayout.FillDirection = Enum.FillDirection.Horizontal
+		SliderUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		SliderUIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+
+		SliderUIPadding.Parent = SliderFunction
+		SliderUIPadding.PaddingLeft = UDim.new(0, 10)
+
+		SliderBG.Name = "SliderBG"
+		SliderBG.Parent = SliderFunction
+		SliderBG.BackgroundColor3 = Color3.fromRGB(11, 81, 244)
+		SliderBG.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		SliderBG.BorderSizePixel = 0
+		SliderBG.LayoutOrder = 2
+		SliderBG.Position = UDim2.new(0.563442409, 0, 0.367229193, 0)
+		SliderBG.Size = UDim2.new(0.345646083, 0, 0.265542328, 0)
+
+		SliderBGUICorner.CornerRadius = UDim.new(0, 25)
+		SliderBGUICorner.Parent = SliderBG
+
+		Slider.Name = "Slider"
+		Slider.Parent = SliderBG
+		Slider.BackgroundColor3 = Color3.fromRGB(0, 169, 247)
+		Slider.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		Slider.BorderSizePixel = 0
+		Slider.Size = UDim2.new(0.400000006, 0, 1, 0)
+		Slider.Font = Enum.Font.SourceSans
+		Slider.Text = ""
+		Slider.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Slider.TextSize = 14.000
+
+		UICorner_2.CornerRadius = UDim.new(0, 25)
+		UICorner_2.Parent = Slider
+
+		SliderBGUIAspectRatioConstraint.Parent = SliderBG
+		SliderBGUIAspectRatioConstraint.AspectRatio = 10.025
+
+		SliderAmount.Name = "SliderAmount"
+		SliderAmount.Parent = SliderBG
+		SliderAmount.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		SliderAmount.BackgroundTransparency = 1.000
+		SliderAmount.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		SliderAmount.BorderSizePixel = 0
+		SliderAmount.Position = UDim2.new(0, 0, -2.04099989, 0)
+		SliderAmount.Size = UDim2.new(1, 0, 1.46399999, 0)
+		SliderAmount.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+		SliderAmount.Text = "1"
+		SliderAmount.TextColor3 = Color3.fromRGB(181, 181, 181)
+		SliderAmount.TextScaled = true
+		SliderAmount.TextSize = 14.000
+		SliderAmount.TextWrapped = true
+
+		UIAspectRatioConstraint.Parent = SliderAmount
+		UIAspectRatioConstraint.AspectRatio = 6.848
+
+		Trigger.Name = "Trigger"
+		Trigger.Parent = SliderBG
+		Trigger.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Trigger.BackgroundTransparency = 1.000
+		Trigger.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		Trigger.BorderSizePixel = 0
+		Trigger.Size = UDim2.new(1, 0, 1, 0)
+		Trigger.Font = Enum.Font.SourceSans
+		Trigger.Text = ""
+		Trigger.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Trigger.TextSize = 14.000
+
+		TriggerUIAspectRatioConstraint.Parent = Trigger
+		TriggerUIAspectRatioConstraint.AspectRatio = 10.025
+
+		SliderFunctionUIAspectRatioConstraint.Parent = SliderFunction
+		SliderFunctionUIAspectRatioConstraint.AspectRatio = 8.086
+		
+		local TweenStyle = TweenInfo.new(0.25, Enum.EasingStyle.Exponential)
+		
+		local function UpdateSlider()
+			local MinValueClamped = MinValue/100
+			local MaxValueClamped = MaxValue/100
+			
+			local output = math.clamp((mouse.X-SliderBG.AbsolutePosition.X)/SliderBG.AbsoluteSize.X,0,1)
+			
+			local outputClamped = MinValue + (output*(MaxValue-MinValue))
+			
+			if tonumber(SliderAmount.Text) ~= outputClamped then
+				tweenService:Create(Slider, TweenStyle, {Size = UDim2.fromScale(output, 1)}):Play()
+			end
+			
+			SliderAmount.Text = math.round(tonumber(outputClamped))
+			
+			if callback then
+				callback(math.round(tonumber(outputClamped)))
+			end
+		end
+		
+		local sliderActive = false
+		
+		local function ActivateSlider()
+			sliderActive = true
+			while sliderActive do
+				UpdateSlider()
+				task.wait()
+			end
+		end
+		
+		Trigger.MouseButton1Down:Connect(ActivateSlider)
+		
+		UserInputService.InputEnded:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+				sliderActive = false
 			end
 		end)
 	end
