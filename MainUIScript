@@ -36,13 +36,13 @@ local UIGridLayout = Instance.new("UIGridLayout")
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 local mouse = Player:GetMouse()
-local Icons = loadstring(game:HttpGet(("https://raw.githubusercontent.com/KettyDev/ShitWare/main/Icons"), true))()
+local Icons = require(game.ReplicatedStorage:WaitForChild("Icons"))
 local LastUpdateDate = "Jul 29 2024"
 
 function shitware:New(UILibName)
 	if Player:WaitForChild("PlayerGui"):FindFirstChild("UILib") then
 		Player:WaitForChild("PlayerGui"):FindFirstChild("UILib"):Destroy()
-		game.ReplicatedStorage.Blur:Destroy()
+		game.Lighting:FindFirstChild("ShitwareBlur"):Destroy()
 	end
 	
 	local LoadingUILIB = Instance.new("ScreenGui")
@@ -170,6 +170,7 @@ function shitware:New(UILibName)
 	local frame
 	local done = false
 	local blur = Instance.new("BlurEffect")
+	blur.Name = "ShitwareBlur"
 	blur.Parent = game.Lighting
 	frame = Player:WaitForChild("PlayerGui"):WaitForChild("LoadingUILIB"):WaitForChild("MainFrame")
 	dots = frame:WaitForChild("Dots")
