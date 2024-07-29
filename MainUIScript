@@ -925,7 +925,13 @@ function shitware:New(UILibName)
 	ExecutorUsingText.Size = UDim2.new(0.671999991, 0, 0.766344249, 0)
 	ExecutorUsingText.ZIndex = 3
 	ExecutorUsingText.FontFace = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
-	ExecutorUsingText.Text = "Wave"
+	if game.PlaceId == 18625205101 then
+		ExecutorUsingText.Text = "In Dev Place"
+	else
+		local executor, version = identifyexecutor()
+
+		ExecutorUsingText.Text = tostring(executor.." "..version)
+	end
 	ExecutorUsingText.TextColor3 = Color3.fromRGB(13, 140, 207)
 	ExecutorUsingText.TextScaled = true
 	ExecutorUsingText.TextSize = 14.000
