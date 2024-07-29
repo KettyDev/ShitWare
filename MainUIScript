@@ -790,7 +790,7 @@ function shitware:New(UILibName)
 	UsernameFrameUIListLayout.FillDirection = Enum.FillDirection.Horizontal
 	UsernameFrameUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 	UsernameFrameUIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
-	UsernameFrameUIListLayout.Padding = UDim.new(0, 3)
+	UsernameFrameUIListLayout.Padding = UDim.new(0, 0)
 
 	UsernameTitle.Name = "UsernameTitle"
 	UsernameTitle.Parent = UsernameFrame
@@ -809,6 +809,7 @@ function shitware:New(UILibName)
 	UsernameTitle.TextScaled = true
 	UsernameTitle.TextSize = 14.000
 	UsernameTitle.TextWrapped = true
+	UsernameTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 	UsernameText.Name = "UsernameText"
 	UsernameText.Parent = UsernameFrame
