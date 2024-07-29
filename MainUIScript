@@ -210,7 +210,7 @@ function shitware:New(UILibName)
 	end)
 
 	tweenService:Create(frame.UIScale, tweenInfo2, {Scale = 1}):Play()
-	tweenService:Create(blur, tweenInfo2, {Size = 24}):Play()
+	tweenService:Create(game.Lighting:FindFirstChild("ShitwareBlur"), tweenInfo2, {Size = 24}):Play()
 	task.wait(0.4)
 
 	local function FastTween(_entity, tweenGoals, tweenInfoRaw, delayTime)
@@ -333,7 +333,7 @@ function shitware:New(UILibName)
 	task.wait(1.5)
 
 	local hide = tweenService:Create(frame.UIScale, tweenInfo3, {Scale = 0})
-	tweenService:Create(blur, tweenInfo2, {Size = 0}):Play()
+	tweenService:Create(game.Lighting:FindFirstChild("ShitwareBlur"), tweenInfo2, {Size = 0}):Play()
 	hide.Completed:Connect(function()
 		task.wait(0.2)
 		frame.Parent:Destroy()
@@ -1169,11 +1169,11 @@ function shitware:New(UILibName)
 			local FrameToScale = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main")
 			local showMenu = tweenService:Create(FrameToScale.UIScale, tweenInfo2, { Scale = 1 })
 			showMenu:Play()
-			tweenService:Create(blur, tweenInfo2, {Size = 24}):Play()
+			tweenService:Create(game.Lighting:FindFirstChild("ShitwareBlur"), tweenInfo2, {Size = 24}):Play()
 
 			if FrameToScale.UIScale.Scale == 1 then
 				local hideMenu = tweenService:Create(FrameToScale.UIScale, tweenInfo3, { Scale = 0 })
-				tweenService:Create(blur, tweenInfo2, {Size = 0}):Play()
+				tweenService:Create(game.Lighting:FindFirstChild("ShitwareBlur"), tweenInfo2, {Size = 0}):Play()
 				hideMenu:Play()
 			end
 		end
@@ -1215,7 +1215,7 @@ function shitware:New(UILibName)
 
 	task.wait(0.4)
 	tweenService:Create(Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main"):WaitForChild("UIScale"), tweenInfo2, {Scale = 1}):Play()
-	tweenService:Create(blur, tweenInfo2, {Size = 24}):Play()
+	tweenService:Create(game.Lighting:FindFirstChild("ShitwareBlur"), tweenInfo2, {Size = 24}):Play()
 end
 
 function shitware:AddTabSection(SectionName)
