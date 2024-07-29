@@ -40,6 +40,11 @@ local Icons = loadstring(game:HttpGet(("https://raw.githubusercontent.com/KettyD
 local LastUpdateDate = "Jul 29 2024"
 
 function shitware:New(UILibName)
+	if Player:WaitForChild("PlayerGui"):FindFirstChild("UILib") then
+		Player:WaitForChild("PlayerGui"):FindFirstChild("UILib"):Destroy()
+		game.ReplicatedStorage.Blur:Destroy()
+	end
+	
 	local LoadingUILIB = Instance.new("ScreenGui")
 	local MainFrame = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
@@ -505,7 +510,7 @@ function shitware:New(UILibName)
 	TopBarBehind.Position = UDim2.new(0.500997424, 0, 0.748112321, 0)
 	TopBarBehind.Size = UDim2.new(1.00199485, 0, 0.503775418, 0)
 	TopBarBehind.ZIndex = 2
-
+	
 	SettingsButtonOpen.Name = "SettingsButton"
 	SettingsButtonOpen.Parent = TopBar
 	SettingsButtonOpen.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -654,12 +659,12 @@ function shitware:New(UILibName)
 
 	MainUIAspectRatioConstraint.Parent = Main
 	MainUIAspectRatioConstraint.AspectRatio = 1.505
-
-
-
-
-
-
+	
+	
+	
+	
+	
+	
 	Settings.Name = "Settings"
 	Settings.Parent = UILib.Main
 	Settings.BackgroundColor3 = Color3.fromRGB(7, 9, 12)
@@ -675,7 +680,7 @@ function shitware:New(UILibName)
 	SettingsUICorner.CornerRadius = UDim.new(0, 10)
 	SettingsUICorner.Name = "SettingsUICorner"
 	SettingsUICorner.Parent = Settings
-
+	
 	SettingsUIScale.Scale = 0
 
 	SettingsTopBar.Name = "SettingsTopBar"
@@ -1098,7 +1103,7 @@ function shitware:New(UILibName)
 	MenuKeybindButtonUIAspectRatioConstraint.Name = "MenuKeybindButtonUIAspectRatioConstraint"
 	MenuKeybindButtonUIAspectRatioConstraint.Parent = MenuKeybindButton
 	MenuKeybindButtonUIAspectRatioConstraint.AspectRatio = 3.108
-
+	
 	SettingsCloseButton.MouseButton1Click:Connect(function()
 		SettingsButtonOpen:SetAttribute("Visible", false)
 
@@ -1110,10 +1115,10 @@ function shitware:New(UILibName)
 
 		tweenService:Create(SettingsUIScale, tweenInfo2, { Scale = 0 }):Play()
 	end)
-
+	
 	SettingsButtonOpen.MouseButton1Click:Connect(function()
 		SettingsButtonOpen:SetAttribute("Visible", not SettingsButtonOpen:GetAttribute("Visible"))
-
+		
 		task.spawn(function()
 			tweenService:Create(SettingsButtonOpen.UIScale, tweenInfo2, { Scale = 1.1 }):Play()
 			task.wait(0.05)
@@ -1126,7 +1131,7 @@ function shitware:New(UILibName)
 			tweenService:Create(SettingsUIScale, tweenInfo2, { Scale = 0 }):Play()
 		end
 	end)
-
+	
 	local function waitForKeyPress()
 		local keyPressed = nil
 		local connection
@@ -1155,8 +1160,8 @@ function shitware:New(UILibName)
 			toggleKey = newKeybind
 		end
 	end)
-
-
+	
+	
 	UserInputService.InputBegan:Connect(function(input)
 		if input.KeyCode == toggleKey then
 			local FrameToScale = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main")
@@ -1462,7 +1467,7 @@ function shitware:AddTabBox(TabName, TabBoxName)
 		TabBox.BorderSizePixel = 0
 		TabBox.Position = UDim2.new(0.5, 0, 0.5, 0)
 		TabBox.Size = UDim2.new(1, 0, 1, 0)
-
+		
 		TabBoxUIStroke.ApplyStrokeMode = 1
 		TabBoxUIStroke.Thickness = 1
 		TabBoxUIStroke.Color = Color3.fromRGB(4, 29, 42)
@@ -1652,7 +1657,7 @@ function shitware:AddSlider(TabBoxName, SliderText, MinValue, MaxValue, callback
 			Tab = v:FindFirstChild(TabBoxName)
 		end
 	end
-
+	
 	if Tab then
 		local SliderFunction = Instance.new("Frame")
 		local SliderTextLabel = Instance.new("TextLabel")
@@ -1768,30 +1773,30 @@ function shitware:AddSlider(TabBoxName, SliderText, MinValue, MaxValue, callback
 
 		SliderFunctionUIAspectRatioConstraint.Parent = SliderFunction
 		SliderFunctionUIAspectRatioConstraint.AspectRatio = 8.086
-
+		
 		local TweenStyle = TweenInfo.new(0.25, Enum.EasingStyle.Exponential)
-
+		
 		local function UpdateSlider()
 			local MinValueClamped = MinValue/100
 			local MaxValueClamped = MaxValue/100
-
+			
 			local output = math.clamp((mouse.X-SliderBG.AbsolutePosition.X)/SliderBG.AbsoluteSize.X,0,1)
-
+			
 			local outputClamped = MinValue + (output*(MaxValue-MinValue))
-
+			
 			if tonumber(SliderAmount.Text) ~= outputClamped then
 				tweenService:Create(Slider, TweenStyle, {Size = UDim2.fromScale(output, 1)}):Play()
 			end
-
+			
 			SliderAmount.Text = math.round(tonumber(outputClamped))
-
+			
 			if callback then
 				callback(math.round(tonumber(outputClamped)))
 			end
 		end
-
+		
 		local sliderActive = false
-
+		
 		local function ActivateSlider()
 			sliderActive = true
 			while sliderActive do
@@ -1799,9 +1804,9 @@ function shitware:AddSlider(TabBoxName, SliderText, MinValue, MaxValue, callback
 				task.wait()
 			end
 		end
-
+		
 		Trigger.MouseButton1Down:Connect(ActivateSlider)
-
+		
 		UserInputService.InputEnded:Connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 				sliderActive = false
