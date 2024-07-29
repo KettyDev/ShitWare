@@ -442,7 +442,7 @@ function shitware:New(UILibName)
 	Main.BorderSizePixel = 0
 	Main.ClipsDescendants = false
 	Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Main.Size = UDim2.new(0.469, 0, 0.644, 0)
+	Main.Size = UDim2.new(0.4, 0, 0.6, 0)
 	local UIScale = Instance.new("UIScale")
 	UIScale.Parent = Main
 	UIScale.Scale = 0
@@ -505,7 +505,7 @@ function shitware:New(UILibName)
 	TopBarBehind.Position = UDim2.new(0.500997424, 0, 0.748112321, 0)
 	TopBarBehind.Size = UDim2.new(1.00199485, 0, 0.503775418, 0)
 	TopBarBehind.ZIndex = 2
-	
+
 	SettingsButtonOpen.Name = "SettingsButton"
 	SettingsButtonOpen.Parent = TopBar
 	SettingsButtonOpen.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -654,12 +654,12 @@ function shitware:New(UILibName)
 
 	MainUIAspectRatioConstraint.Parent = Main
 	MainUIAspectRatioConstraint.AspectRatio = 1.505
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	Settings.Name = "Settings"
 	Settings.Parent = UILib.Main
 	Settings.BackgroundColor3 = Color3.fromRGB(7, 9, 12)
@@ -675,7 +675,7 @@ function shitware:New(UILibName)
 	SettingsUICorner.CornerRadius = UDim.new(0, 10)
 	SettingsUICorner.Name = "SettingsUICorner"
 	SettingsUICorner.Parent = Settings
-	
+
 	SettingsUIScale.Scale = 0
 
 	SettingsTopBar.Name = "SettingsTopBar"
@@ -1092,7 +1092,7 @@ function shitware:New(UILibName)
 	MenuKeybindButtonUIAspectRatioConstraint.Name = "MenuKeybindButtonUIAspectRatioConstraint"
 	MenuKeybindButtonUIAspectRatioConstraint.Parent = MenuKeybindButton
 	MenuKeybindButtonUIAspectRatioConstraint.AspectRatio = 3.108
-	
+
 	SettingsCloseButton.MouseButton1Click:Connect(function()
 		SettingsButtonOpen:SetAttribute("Visible", false)
 
@@ -1104,10 +1104,10 @@ function shitware:New(UILibName)
 
 		tweenService:Create(SettingsUIScale, tweenInfo2, { Scale = 0 }):Play()
 	end)
-	
+
 	SettingsButtonOpen.MouseButton1Click:Connect(function()
 		SettingsButtonOpen:SetAttribute("Visible", not SettingsButtonOpen:GetAttribute("Visible"))
-		
+
 		task.spawn(function()
 			tweenService:Create(SettingsButtonOpen.UIScale, tweenInfo2, { Scale = 1.1 }):Play()
 			task.wait(0.05)
@@ -1120,7 +1120,7 @@ function shitware:New(UILibName)
 			tweenService:Create(SettingsUIScale, tweenInfo2, { Scale = 0 }):Play()
 		end
 	end)
-	
+
 	local function waitForKeyPress()
 		local keyPressed = nil
 		local connection
@@ -1149,8 +1149,8 @@ function shitware:New(UILibName)
 			toggleKey = newKeybind
 		end
 	end)
-	
-	
+
+
 	UserInputService.InputBegan:Connect(function(input)
 		if input.KeyCode == toggleKey then
 			local FrameToScale = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main")
@@ -1448,7 +1448,7 @@ function shitware:AddTabBox(TabName, TabBoxName)
 		local TabNameText = Instance.new("TextLabel")
 		local TabBoxUIStroke = Instance.new("UIStroke")
 
-		TabBox.Name = TabName
+		TabBox.Name = TabBoxName
 		TabBox.Parent = Tab
 		TabBox.AnchorPoint = Vector2.new(0.5, 0.5)
 		TabBox.BackgroundColor3 = Color3.fromRGB(7, 5, 9)
@@ -1456,7 +1456,7 @@ function shitware:AddTabBox(TabName, TabBoxName)
 		TabBox.BorderSizePixel = 0
 		TabBox.Position = UDim2.new(0.5, 0, 0.5, 0)
 		TabBox.Size = UDim2.new(1, 0, 1, 0)
-		
+
 		TabBoxUIStroke.ApplyStrokeMode = 1
 		TabBoxUIStroke.Thickness = 1
 		TabBoxUIStroke.Color = Color3.fromRGB(4, 29, 42)
@@ -1528,8 +1528,13 @@ function shitware:AddTabBox(TabName, TabBoxName)
 	end
 end
 
-function shitware:AddToggle(TabName, ToggleText, callback)
-	local Tab = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main"):WaitForChild("TabHolder"):FindFirstChild(TabName):FindFirstChild(TabName)
+function shitware:AddToggle(TabBoxName, ToggleText, callback)
+	local Tab
+	for i,v in Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main"):WaitForChild("TabHolder"):GetChildren() do
+		if v:FindFirstChild(TabBoxName) then
+			Tab = v:FindFirstChild(TabBoxName)
+		end
+	end
 
 	if Tab then
 		local NewToggle = Instance.new("Frame")
@@ -1554,7 +1559,7 @@ function shitware:AddToggle(TabName, ToggleText, callback)
 		NewToggle.Size = UDim2.new(1, 0, 0.205, 0)
 		NewToggle:SetAttribute("Toggle", false)
 
-		NewToggleName.Name = TabName
+		NewToggleName.Name = TabBoxName
 		NewToggleName.Parent = NewToggle
 		NewToggleName.BackgroundColor3 = Color3.fromRGB(157, 157, 157)
 		NewToggleName.BackgroundTransparency = 1.000
@@ -1634,9 +1639,14 @@ function shitware:AddToggle(TabName, ToggleText, callback)
 	end
 end
 
-function shitware:AddSlider(TabName, SliderText, MinValue, MaxValue, callback)
-	local Tab = Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main"):WaitForChild("TabHolder"):FindFirstChild(TabName):FindFirstChild(TabName)
-	
+function shitware:AddSlider(TabBoxName, SliderText, MinValue, MaxValue, callback)
+	local Tab
+	for i,v in Player:WaitForChild("PlayerGui"):WaitForChild("UILib"):WaitForChild("Main"):WaitForChild("TabHolder"):GetChildren() do
+		if v:FindFirstChild(TabBoxName) then
+			Tab = v:FindFirstChild(TabBoxName)
+		end
+	end
+
 	if Tab then
 		local SliderFunction = Instance.new("Frame")
 		local SliderTextLabel = Instance.new("TextLabel")
@@ -1752,30 +1762,30 @@ function shitware:AddSlider(TabName, SliderText, MinValue, MaxValue, callback)
 
 		SliderFunctionUIAspectRatioConstraint.Parent = SliderFunction
 		SliderFunctionUIAspectRatioConstraint.AspectRatio = 8.086
-		
+
 		local TweenStyle = TweenInfo.new(0.25, Enum.EasingStyle.Exponential)
-		
+
 		local function UpdateSlider()
 			local MinValueClamped = MinValue/100
 			local MaxValueClamped = MaxValue/100
-			
+
 			local output = math.clamp((mouse.X-SliderBG.AbsolutePosition.X)/SliderBG.AbsoluteSize.X,0,1)
-			
+
 			local outputClamped = MinValue + (output*(MaxValue-MinValue))
-			
+
 			if tonumber(SliderAmount.Text) ~= outputClamped then
 				tweenService:Create(Slider, TweenStyle, {Size = UDim2.fromScale(output, 1)}):Play()
 			end
-			
+
 			SliderAmount.Text = math.round(tonumber(outputClamped))
-			
+
 			if callback then
 				callback(math.round(tonumber(outputClamped)))
 			end
 		end
-		
+
 		local sliderActive = false
-		
+
 		local function ActivateSlider()
 			sliderActive = true
 			while sliderActive do
@@ -1783,9 +1793,9 @@ function shitware:AddSlider(TabName, SliderText, MinValue, MaxValue, callback)
 				task.wait()
 			end
 		end
-		
+
 		Trigger.MouseButton1Down:Connect(ActivateSlider)
-		
+
 		UserInputService.InputEnded:Connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 				sliderActive = false
